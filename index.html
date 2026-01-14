@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Han | Strategic Health, Wellness & Regulatory Leader</title>
+    <meta name="description" content="Sitio Oficial del Dr. Edgar Ivan Bañuelos Han. Liderazgo estratégico en Salud Ocupacional, Bienestar Corporativo y Cumplimiento Normativo.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS (Configuración personalizada vía script) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#0f172a',    // Navy Blue Profundo
+                        slate: '#f8fafc',   // Slate 50 (Fondos claros)
+                        sky: '#0ea5e9',     // Sky Blue (Visión)
+                        teal: '#0d9488',    // Teal (Salud/Seguridad)
+                        whatsapp: '#25D366', // Verde WhatsApp
+                        ai: '#6366f1'       // Indigo para IA
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glow': '0 4px 20px -2px rgba(13, 148, 136, 0.5)',
+                        'ai-glow': '0 4px 25px -5px rgba(99, 102, 241, 0.5)',
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Ajustes específicos para scroll y animaciones sutiles */
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #0ea5e9, #0d9488);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Dashboard mock animation */
+        .bar-animate {
+            animation: growBar 1.5s ease-out forwards;
+        }
+        @keyframes growBar {
+            from { width: 0; }
+        }
+        /* Markdown-like output styling */
+        .ai-response ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1rem; }
+        .ai-response strong { color: #0f172a; font-weight: 700; }
+        .ai-response p { margin-bottom: 0.75rem; }
+    </style>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+    <!-- NAVBAR FIXED -->
+    <nav class="fixed w-full z-50 bg-navy/95 backdrop-blur-md shadow-lg border-b border-gray-800 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 md:h-20 gap-4 lg:gap-8">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="text-white font-heading font-bold text-xl tracking-wide flex flex-col sm:flex-row sm:items-center">
+                        <span>DR. HAN</span> 
+                        <span class="text-sky font-light sm:ml-2 text-xs sm:text-sm tracking-normal opacity-90 hidden lg:inline-block border-l border-gray-600 pl-2 ml-2">STRATEGIC HEALTH LEADER</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-4 lg:space-x-8 items-center">
+                    <a href="#hero" class="text-gray-300 hover:text-white transition-colors text-sm font-medium tracking-wide" data-i18n="nav_home">Inicio</a>
+                    <a href="#about" class="text-gray-300 hover:text-white transition-colors text-sm font-medium tracking-wide" data-i18n="nav_strategy">Estrategia</a>
+                    <a href="#bi" class="text-gray-300 hover:text-white transition-colors text-sm font-medium tracking-wide" data-i18n="nav_bi">BI & Data</a>
+                    <a href="#ai-simulator" class="text-indigo-400 hover:text-indigo-300 transition-colors text-sm font-bold tracking-wide flex items-center gap-1"><i class="fas fa-robot"></i> <span data-i18n="nav_ai">AI Sim</span></a>
+                    <a href="#trayectoria" class="text-gray-300 hover:text-white transition-colors text-sm font-medium tracking-wide" data-i18n="nav_career">Trayectoria</a>
+                    
+                    <a href="https://wa.me/525629846164" target="_blank" class="bg-teal hover:bg-teal/90 text-white px-4 py-2 rounded-full text-xs lg:text-sm font-bold transition-all shadow-glow flex items-center gap-2 transform hover:scale-105">
+                        <i class="fab fa-whatsapp"></i> <span class="hidden lg:inline" data-i18n="nav_whatsapp">WhatsApp directo</span><span class="lg:hidden">WA</span>
+                    </a>
+
+                    <!-- Language Toggle Button -->
+                    <button id="lang-toggle" class="ml-2 px-3 py-1 rounded border border-gray-500 text-gray-300 hover:text-white hover:border-white transition-colors text-xs font-bold uppercase w-10 text-center">
+                        EN
+                    </button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center gap-4">
+                     <!-- Language Toggle Mobile -->
+                     <button id="lang-toggle-mobile" class="px-2 py-1 rounded border border-gray-500 text-gray-300 text-xs font-bold uppercase w-8 text-center">
+                        EN
+                    </button>
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy border-t border-gray-800 absolute w-full">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+                <a href="#hero" class="block px-3 py-2 text-gray-300 hover:text-white font-medium" data-i18n="nav_home">Inicio</a>
+                <a href="#about" class="block px-3 py-2 text-gray-300 hover:text-white font-medium" data-i18n="nav_strategy">Estrategia</a>
+                <a href="#bi" class="block px-3 py-2 text-gray-300 hover:text-white font-medium" data-i18n="nav_bi">Data & BI</a>
+                <a href="#ai-simulator" class="block px-3 py-2 text-indigo-400 hover:text-white font-medium font-bold" data-i18n="nav_ai_full">AI Strategic Sim ✨</a>
+                <a href="#trayectoria" class="block px-3 py-2 text-gray-300 hover:text-white font-medium" data-i18n="nav_career">Trayectoria</a>
+                <a href="https://wa.me/525629846164" class="block mt-4 bg-teal text-white px-3 py-3 rounded font-bold mx-4" data-i18n="nav_whatsapp">
+                    WhatsApp directo
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative bg-navy pt-24 md:pt-32 lg:pt-36 pb-16 lg:pb-24 overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-sky/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-teal/10 rounded-full blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                
+                <!-- Text Content -->
+                <div class="order-2 lg:order-1 text-center lg:text-left pt-2 lg:pt-0">
+                    <span class="inline-block py-1 px-3 rounded-full bg-slate-800 border border-slate-700 text-sky text-[10px] lg:text-xs font-bold tracking-widest mb-4 uppercase" data-i18n="hero_badge">
+                        Salud Ocupacional y Bienestar Corporativo
+                    </span>
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-heading font-extrabold text-white leading-tight mb-5" data-i18n="hero_h1">
+                        Strategic Health, <br>
+                        <span class="gradient-text">Wellness & Regulatory</span> Leader.
+                    </h1>
+                    <h2 class="text-base lg:text-lg text-gray-400 mb-8 font-light leading-relaxed max-w-2xl mx-auto lg:mx-0 text-justify lg:text-left" data-i18n="hero_desc">
+                        Soy el <strong class="text-white">Dr. Han</strong>. Lidero la transformación de la salud corporativa, alineando el cumplimiento normativo estricto con estrategias de bienestar que impulsan la rentabilidad y blindan la operación.
+                    </h2>
+                    
+                    <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                        <a href="#about" class="px-6 py-3.5 bg-white text-navy font-bold rounded shadow hover:bg-gray-100 transition-colors text-sm sm:text-base" data-i18n="hero_btn_vision">
+                            Ver visión estratégica
+                        </a>
+                        <a href="#ai-simulator" class="px-6 py-3.5 bg-indigo-600 text-white font-bold rounded shadow-lg shadow-indigo-500/30 hover:bg-indigo-700 transition-colors text-sm sm:text-base flex items-center gap-2">
+                            <i class="fas fa-robot"></i> <span data-i18n="hero_btn_ai">Probar AI Simulator</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Profile Image -->
+                <div class="order-1 lg:order-2 flex justify-center lg:justify-end">
+                    <div class="relative w-full max-w-sm lg:max-w-md">
+                        <!-- Decorative border effect -->
+                        <div class="absolute inset-0 border-2 border-teal rounded-2xl transform translate-x-3 translate-y-3"></div>
+                        <img 
+                            src="https://drive.google.com/thumbnail?id=1VWqk33PEasus2aWjckWVViojvVw-cajS&sz=w1000" 
+                            alt="Dr. Edgar Ivan Bañuelos Han - Strategic Health Leader" 
+                            referrerpolicy="no-referrer"
+                            class="relative rounded-2xl shadow-2xl w-full h-auto object-cover z-10 aspect-[4/5] object-top grayscale hover:grayscale-0 transition-all duration-700 ease-in-out bg-gray-800"
+                        >
+                        <!-- Badge Floating -->
+                        <div class="absolute bottom-8 -left-6 z-20 bg-white p-4 rounded-lg shadow-xl border-l-4 border-sky hidden sm:block">
+                            <p class="text-navy font-bold text-sm" data-i18n="badge_id_label">Cédula profesional</p>
+                            <p class="text-gray-600 text-xs">12210167</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: SOBRE MÍ (Pitch) -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl lg:text-4xl font-heading font-bold text-navy mb-4" data-i18n="about_title">
+                    Más allá de la medicina ocupacional: <span class="text-teal">gestión de riesgos.</span>
+                </h2>
+                <div class="w-24 h-1 bg-sky mx-auto rounded mb-6"></div>
+                <p class="text-lg text-gray-600 leading-relaxed text-justify px-4 lg:px-0" data-i18n="about_desc">
+                    Elevo la salud ocupacional de un requisito operativo a una ventaja competitiva. Diseño e implemento estrategias de cumplimiento normativo y bienestar corporativo que no solo mitigan riesgos legales (STPS/ISO), sino que optimizan la productividad y aseguran la continuidad del negocio.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="p-8 rounded-xl bg-slate border border-gray-100 hover:shadow-xl transition-shadow group">
+                    <div class="w-14 h-14 bg-navy rounded-lg flex items-center justify-center mb-6 group-hover:bg-sky transition-colors">
+                        <i class="fas fa-scale-balanced text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-navy mb-3" data-i18n="card1_title">Liderazgo regulatorio</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed text-justify" data-i18n="card1_desc">
+                        Implementación estricta de normatividad STPS e ISO 45001. Gestión proactiva para evitar multas y asegurar la continuidad operativa.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="p-8 rounded-xl bg-slate border border-gray-100 hover:shadow-xl transition-shadow group">
+                    <div class="w-14 h-14 bg-navy rounded-lg flex items-center justify-center mb-6 group-hover:bg-teal transition-colors">
+                        <i class="fas fa-heart-pulse text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-navy mb-3" data-i18n="card2_title">Wellness corporativo (ROI)</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed text-justify" data-i18n="card2_desc">
+                        Programas de bienestar diseñados no solo para la salud, sino para mejorar la productividad, retención de talento y reducir la prima de riesgo.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="p-8 rounded-xl bg-slate border border-gray-100 hover:shadow-xl transition-shadow group">
+                    <div class="w-14 h-14 bg-navy rounded-lg flex items-center justify-center mb-6 group-hover:bg-sky transition-colors">
+                        <i class="fas fa-shield-virus text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-navy mb-3" data-i18n="card3_title">Gestión de crisis</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed text-justify" data-i18n="card3_desc">
+                        Experiencia probada en vigilancia epidemiológica y respuesta rápida ante emergencias sanitarias en entornos de alto flujo como la aviación.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: BUSINESS INTELLIGENCE (Looker Studio Sim) -->
+    <section id="bi" class="py-24 bg-slate relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                
+                <!-- Text Content -->
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <i class="fas fa-chart-line text-sky"></i>
+                        <span class="text-sm font-bold text-gray-500 uppercase tracking-wide" data-i18n="bi_tag">Salud basada en datos</span>
+                    </div>
+                    <h2 class="text-3xl lg:text-4xl font-heading font-bold text-navy mb-6" data-i18n="bi_title">
+                        Decisiones basadas en datos. <br>
+                        <span class="text-sky">No en suposiciones.</span>
+                    </h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed text-justify" data-i18n="bi_desc">
+                        Modernizo la gestión médica mediante la implementación de tableros ejecutivos en <strong>Looker Studio</strong>. Monitoreo de KPIs críticos en tiempo real para anticipar riesgos.
+                    </p>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-teal"></i>
+                            <span class="text-gray-700 font-medium" data-i18n="bi_list1">Análisis de siniestralidad y primas de riesgo.</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-teal"></i>
+                            <span class="text-gray-700 font-medium" data-i18n="bi_list2">Tracking de cumplimiento normativo (Real-time).</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-teal"></i>
+                            <span class="text-gray-700 font-medium" data-i18n="bi_list3">Auditoría clínica digital.</span>
+                        </li>
+                    </ul>
+
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white border border-gray-200 rounded-full text-xs font-bold text-navy">Regulatory Compliance</span>
+                        <span class="px-3 py-1 bg-white border border-gray-200 rounded-full text-xs font-bold text-navy">Wellness ROI</span>
+                        <span class="px-3 py-1 bg-white border border-gray-200 rounded-full text-xs font-bold text-navy">Data Science</span>
+                    </div>
+                </div>
+
+                <!-- Visual Mock Dashboard -->
+                <div class="relative bg-white p-6 rounded-xl shadow-2xl border border-gray-100">
+                    <!-- Fake Browser Header -->
+                    <div class="flex items-center gap-2 mb-6 border-b pb-4">
+                        <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                        <div class="ml-4 bg-gray-100 px-3 py-1 rounded-md text-xs text-gray-400 flex-1">lookerstudio.google.com/reporting/dr-han-kpis</div>
+                    </div>
+                    
+                    <!-- Dashboard Grid -->
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <p class="text-xs text-gray-500 mb-1" data-i18n="dash_risk">Prima de riesgo</p>
+                            <p class="text-2xl font-bold text-navy">-15%</p>
+                            <div class="w-full bg-gray-200 h-1.5 rounded-full mt-2">
+                                <div class="bg-sky h-1.5 rounded-full w-[85%]"></div>
+                            </div>
+                        </div>
+                        <div class="bg-teal-50 p-4 rounded-lg">
+                            <p class="text-xs text-gray-500 mb-1" data-i18n="dash_iso">Cumplimiento ISO</p>
+                            <p class="text-2xl font-bold text-teal">98.5%</p>
+                            <div class="w-full bg-gray-200 h-1.5 rounded-full mt-2">
+                                <div class="bg-teal h-1.5 rounded-full w-[98%]"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chart Mock -->
+                    <div class="bg-white border border-gray-100 p-4 rounded-lg">
+                        <div class="flex justify-between items-end h-32 gap-2">
+                            <div class="w-full bg-navy/10 rounded-t bar-animate" style="height: 40%;"></div>
+                            <div class="w-full bg-navy/20 rounded-t bar-animate" style="height: 60%;"></div>
+                            <div class="w-full bg-navy/30 rounded-t bar-animate" style="height: 45%;"></div>
+                            <div class="w-full bg-navy/40 rounded-t bar-animate" style="height: 70%;"></div>
+                            <div class="w-full bg-teal rounded-t bar-animate shadow-lg" style="height: 90%;"></div>
+                        </div>
+                        <div class="flex justify-between text-xs text-gray-400 mt-2">
+                            <span>Q1</span><span>Q2</span><span>Q3</span><span>Q4</span><span class="font-bold text-teal" data-i18n="dash_current">Actual</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: GEMINI AI SIMULATOR -->
+    <section id="ai-simulator" class="py-24 bg-gradient-to-br from-navy to-slate-900 relative text-white overflow-hidden">
+        <!-- Abstract Tech Background -->
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-10 left-10 w-64 h-64 bg-indigo-500 rounded-full blur-[100px]"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-teal-500 rounded-full blur-[120px]"></div>
+        </div>
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12">
+                <span class="inline-block py-1 px-3 rounded-full bg-indigo-900/50 border border-indigo-500 text-indigo-300 text-xs font-bold tracking-widest mb-4 uppercase">
+                    <i class="fas fa-sparkles mr-1"></i> <span data-i18n="ai_badge">Powered by Gemini AI</span>
+                </span>
+                <h2 class="text-3xl lg:text-4xl font-heading font-bold mb-4" data-i18n="ai_title">
+                    AI Strategic Simulator
+                </h2>
+                <p class="text-gray-300 text-lg max-w-2xl mx-auto text-justify lg:text-center" data-i18n="ai_desc">
+                    La tecnología es una extensión de la estrategia. Ingrese un desafío actual de su empresa y observe cómo un enfoque basado en datos y cumplimiento generaría una solución inicial.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8 bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 md:p-8 shadow-2xl">
+                <!-- Input Area -->
+                <div class="md:col-span-2 flex flex-col gap-4">
+                    <label for="ai-input" class="text-sm font-bold text-gray-300 uppercase tracking-wide" data-i18n="ai_label">Describa un reto (Ej. "Alto ausentismo por estrés")</label>
+                    <textarea id="ai-input" rows="6" class="w-full bg-navy/50 border border-gray-600 rounded-lg p-4 text-white placeholder-gray-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all resize-none text-sm" placeholder="Ej: Nuestra prima de riesgo aumentó un 10% el último año debido a accidentes en almacén. Necesitamos un plan de contención rápido."></textarea>
+                    
+                    <button id="ai-generate-btn" class="w-full py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold rounded-lg shadow-lg shadow-indigo-500/30 transition-all transform hover:scale-[1.02] flex items-center justify-center gap-2">
+                        <span data-i18n="ai_btn">Generar estrategia ✨</span>
+                    </button>
+                    <p class="text-[10px] text-gray-500 text-center italic" data-i18n="ai_disclaimer">Modelo: Gemini 2.5 Flash. Respuesta generada en tiempo real.</p>
+                </div>
+
+                <!-- Output Area -->
+                <div class="md:col-span-3 bg-white text-gray-800 rounded-lg p-6 relative min-h-[300px] flex flex-col">
+                    <div class="border-b border-gray-200 pb-3 mb-4 flex justify-between items-center">
+                        <div class="flex items-center gap-2">
+                            <div class="w-8 h-8 rounded-full bg-navy flex items-center justify-center text-white text-xs font-bold">DH</div>
+                            <span class="font-heading font-bold text-navy text-sm" data-i18n="ai_preview_title">Strategic Report Preview</span>
+                        </div>
+                        <div id="ai-loader" class="hidden">
+                            <div class="flex space-x-1">
+                                <div class="w-2 h-2 bg-indigo-500 rounded-full animate-bounce"></div>
+                                <div class="w-2 h-2 bg-indigo-500 rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
+                                <div class="w-2 h-2 bg-indigo-500 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="ai-result" class="text-sm leading-relaxed text-gray-600 flex-1 overflow-y-auto ai-response">
+                        <p class="text-gray-400 italic text-center mt-10" data-i18n="ai_waiting">
+                            "Esperando input estratégico para iniciar análisis..."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: TRAYECTORIA (Highlights) -->
+    <section id="trayectoria" class="py-24 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-heading font-bold text-center text-navy mb-16" data-i18n="traj_title">Highlights de trayectoria</h2>
+
+            <div class="relative border-l-4 border-gray-100 ml-4 md:ml-0 space-y-12">
+                
+                <!-- Item 1 -->
+                <div class="relative flex flex-col md:flex-row gap-6 md:items-start pl-8 md:pl-0">
+                    <div class="absolute -left-[11px] md:relative md:left-auto md:w-1/3 md:text-right md:pr-12 flex flex-col md:items-end">
+                        <div class="w-5 h-5 bg-teal rounded-full border-4 border-white md:hidden absolute"></div>
+                        <h4 class="text-lg font-bold text-navy">Aeroméxico & Logística</h4>
+                        <span class="text-sky font-medium text-sm" data-i18n="traj_1_role">Occupational Health</span>
+                    </div>
+                    <div class="hidden md:block w-5 h-5 bg-teal rounded-full border-4 border-white absolute left-1/3 -translate-x-[10px] mt-1 shadow-sm z-10"></div>
+                    <div class="md:w-2/3 bg-slate p-6 rounded-lg border border-gray-100">
+                        <p class="text-gray-700 leading-relaxed text-justify" data-i18n="traj_1_desc">
+                            Gestión estratégica de servicios médicos y medicina preventiva. Optimización de la aptitud psicofísica del personal operativo y cumplimiento estricto de normatividad federal (STPS/SCT), garantizando la continuidad del negocio y reduciendo riesgos legales.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="relative flex flex-col md:flex-row gap-6 md:items-start pl-8 md:pl-0">
+                    <div class="absolute -left-[11px] md:relative md:left-auto md:w-1/3 md:text-right md:pr-12 flex flex-col md:items-end">
+                        <div class="w-5 h-5 bg-navy rounded-full border-4 border-white md:hidden absolute"></div>
+                        <h4 class="text-lg font-bold text-navy" data-i18n="traj_2_title">Strategic Innovation & Solution Delivery</h4>
+                        <span class="text-sky font-medium text-sm" data-i18n="traj_2_role">Health Infrastructure</span>
+                    </div>
+                    <div class="hidden md:block w-5 h-5 bg-navy rounded-full border-4 border-white absolute left-1/3 -translate-x-[10px] mt-1 shadow-sm z-10"></div>
+                    <div class="md:w-2/3 bg-slate p-6 rounded-lg border border-gray-100">
+                        <p class="text-gray-700 leading-relaxed text-justify" data-i18n="traj_2_desc">
+                            Diseño soluciones donde la infraestructura y la salud convergen para mejorar vidas. Mi enfoque no es solo crear sistemas, sino generar impacto real, medible y humano.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="relative flex flex-col md:flex-row gap-6 md:items-start pl-8 md:pl-0">
+                    <div class="absolute -left-[11px] md:relative md:left-auto md:w-1/3 md:text-right md:pr-12 flex flex-col md:items-end">
+                        <div class="w-5 h-5 bg-gray-400 rounded-full border-4 border-white md:hidden absolute"></div>
+                        <h4 class="text-lg font-bold text-navy" data-i18n="traj_3_title">Formación de élite</h4>
+                        <span class="text-sky font-medium text-sm" data-i18n="traj_3_role">Educación continua</span>
+                    </div>
+                    <div class="hidden md:block w-5 h-5 bg-gray-400 rounded-full border-4 border-white absolute left-1/3 -translate-x-[10px] mt-1 shadow-sm z-10"></div>
+                    <div class="md:w-2/3 bg-slate p-6 rounded-lg border border-gray-100">
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• <strong class="text-navy" data-i18n="traj_3_list1">Lean Six Sigma:</strong> <span data-i18n="traj_3_list1_text">Optimización de procesos clínicos.</span></li>
+                            <li>• <strong class="text-navy" data-i18n="traj_3_list2">Ciencia de datos:</strong> <span data-i18n="traj_3_list2_text">Diplomados especializados para gestión médica.</span></li>
+                            <li>• <strong class="text-navy" data-i18n="traj_3_list3">Salud ocupacional:</strong> <span data-i18n="traj_3_list3_text">Certificaciones regulatorias avanzadas.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER & CONTACT -->
+    <footer id="contact" class="bg-navy text-white pt-20 pb-10 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            
+            <h2 class="text-3xl lg:text-4xl font-heading font-bold mb-6" data-i18n="footer_title">¿Hablamos de estrategia y cumplimiento?</h2>
+            <p class="text-gray-400 mb-10 max-w-2xl mx-auto" data-i18n="footer_desc">
+                Estoy listo para aportar visión directiva y seguridad operativa a su organización.
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-16">
+                <a href="mailto:dr.hanmedical@gmail.com" class="px-8 py-4 bg-white text-navy font-bold rounded hover:bg-gray-100 transition-colors flex items-center justify-center gap-3">
+                    <i class="fas fa-envelope"></i> <span data-i18n="footer_btn_email">Correo electrónico</span>
+                </a>
+                <a href="https://wa.me/525629846164" target="_blank" class="px-8 py-4 bg-whatsapp text-white font-bold rounded hover:bg-green-600 transition-colors flex items-center justify-center gap-3">
+                    <i class="fab fa-whatsapp"></i> <span data-i18n="footer_btn_wa">WhatsApp directo</span>
+                </a>
+            </div>
+
+            <div class="border-t border-gray-800 pt-10 flex flex-col items-center space-y-3 text-sm text-gray-400">
+                <p class="font-heading font-bold text-white text-base tracking-wide" data-i18n="footer_role">Dr. Han | Strategic Health</p>
+                <p>Zapopan, Jalisco</p>
+                <a href="mailto:dr.hanmedical@gmail.com" class="hover:text-sky transition-colors">dr.hanmedical@gmail.com</a>
+                <p class="font-medium text-gray-500"><span data-i18n="badge_id_footer">Dr. Edgar Ivan Bañuelos Han - Cédula profesional:</span> 12210167</p>
+                <p class="text-gray-600 pt-4 text-xs" data-i18n="footer_rights">© 2026 Dr. Han Medical. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/525629846164" target="_blank" class="fixed bottom-6 right-6 z-50 bg-whatsapp hover:bg-green-600 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-110 group" title="Contactar por WhatsApp">
+        <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping group-hover:hidden"></span>
+        <i class="fab fa-whatsapp text-3xl relative z-10"></i>
+    </a>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Toggle Mobile Menu
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on click link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Change navbar background on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-xl');
+            } else {
+                navbar.classList.remove('shadow-xl');
+            }
+        });
+
+        // ----------------------------------------------------
+        // INTERNATIONALIZATION (i18n)
+        // ----------------------------------------------------
+        const langToggle = document.getElementById('lang-toggle');
+        const langToggleMobile = document.getElementById('lang-toggle-mobile');
+        let currentLang = 'es';
+
+        const translations = {
+            "es": {
+                "nav_home": "Inicio",
+                "nav_strategy": "Estrategia",
+                "nav_bi": "BI & Data",
+                "nav_ai": "AI Sim",
+                "nav_ai_full": "AI Strategic Sim ✨",
+                "nav_career": "Trayectoria",
+                "nav_whatsapp": "WhatsApp directo",
+                "hero_badge": "Salud Ocupacional y Bienestar Corporativo",
+                "hero_h1": "Strategic Health, <br> <span class=\"gradient-text\">Wellness & Regulatory</span> Leader.",
+                "hero_desc": "Soy el <strong class=\"text-white\">Dr. Han</strong>. Lidero la transformación de la salud corporativa, alineando el cumplimiento normativo estricto con estrategias de bienestar que impulsan la rentabilidad y blindan la operación.",
+                "hero_btn_vision": "Ver visión estratégica",
+                "hero_btn_ai": "Probar AI Simulator",
+                "badge_id_label": "Cédula profesional",
+                "about_title": "Más allá de la medicina ocupacional: <span class=\"text-teal\">gestión de riesgos.</span>",
+                "about_desc": "Elevo la salud ocupacional de un requisito operativo a una ventaja competitiva. Diseño e implemento estrategias de cumplimiento normativo y bienestar corporativo que no solo mitigan riesgos legales (STPS/ISO), sino que optimizan la productividad y aseguran la continuidad del negocio.",
+                "card1_title": "Liderazgo regulatorio",
+                "card1_desc": "Implementación estricta de normatividad STPS e ISO 45001. Gestión proactiva para evitar multas y asegurar la continuidad operativa.",
+                "card2_title": "Wellness corporativo (ROI)",
+                "card2_desc": "Programas de bienestar diseñados no solo para la salud, sino para mejorar la productividad, retención de talento y reducir la prima de riesgo.",
+                "card3_title": "Gestión de crisis",
+                "card3_desc": "Experiencia probada en vigilancia epidemiológica y respuesta rápida ante emergencias sanitarias en entornos de alto flujo como la aviación.",
+                "bi_tag": "Salud basada en datos",
+                "bi_title": "Decisiones basadas en datos. <br> <span class=\"text-sky\">No en suposiciones.</span>",
+                "bi_desc": "Modernizo la gestión médica mediante la implementación de tableros ejecutivos en <strong>Looker Studio</strong>. Monitoreo de KPIs críticos en tiempo real para anticipar riesgos.",
+                "bi_list1": "Análisis de siniestralidad y primas de riesgo.",
+                "bi_list2": "Tracking de cumplimiento normativo (Real-time).",
+                "bi_list3": "Auditoría clínica digital.",
+                "dash_risk": "Prima de riesgo",
+                "dash_iso": "Cumplimiento ISO",
+                "dash_current": "Actual",
+                "ai_badge": "Powered by Gemini AI",
+                "ai_title": "AI Strategic Simulator",
+                "ai_desc": "La tecnología es una extensión de la estrategia. Ingrese un desafío actual de su empresa y observe cómo un enfoque basado en datos y cumplimiento generaría una solución inicial.",
+                "ai_label": "Describa un reto (Ej. \"Alto ausentismo por estrés\")",
+                "ai_btn": "Generar estrategia ✨",
+                "ai_disclaimer": "Modelo: Gemini 2.5 Flash. Respuesta generada en tiempo real.",
+                "ai_preview_title": "Strategic Report Preview",
+                "ai_waiting": "\"Esperando input estratégico para iniciar análisis...\"",
+                "traj_title": "Highlights de trayectoria",
+                "traj_1_role": "Occupational Health",
+                "traj_1_desc": "Gestión estratégica de servicios médicos y medicina preventiva. Optimización de la aptitud psicofísica del personal operativo y cumplimiento estricto de normatividad federal (STPS/SCT), garantizando la continuidad del negocio y reduciendo riesgos legales.",
+                "traj_2_title": "Strategic Innovation & Solution Delivery",
+                "traj_2_role": "Health Infrastructure",
+                "traj_2_desc": "Diseño soluciones donde la infraestructura y la salud convergen para mejorar vidas. Mi enfoque no es solo crear sistemas, sino generar impacto real, medible y humano.",
+                "traj_3_title": "Formación de élite",
+                "traj_3_role": "Educación continua",
+                "traj_3_list1": "Lean Six Sigma:",
+                "traj_3_list1_text": "Optimización de procesos clínicos.",
+                "traj_3_list2": "Ciencia de datos:",
+                "traj_3_list2_text": "Diplomados especializados para gestión médica.",
+                "traj_3_list3": "Salud ocupacional:",
+                "traj_3_list3_text": "Certificaciones regulatorias avanzadas.",
+                "footer_title": "¿Hablamos de estrategia y cumplimiento?",
+                "footer_desc": "Estoy listo para aportar visión directiva y seguridad operativa a su organización.",
+                "footer_btn_email": "Correo electrónico",
+                "footer_btn_wa": "WhatsApp directo",
+                "footer_role": "Dr. Han | Strategic Health",
+                "badge_id_footer": "Dr. Edgar Ivan Bañuelos Han - Cédula profesional:",
+                "footer_rights": "© 2026 Dr. Han Medical. Todos los derechos reservados."
+            },
+            "en": {
+                "nav_home": "Home",
+                "nav_strategy": "Strategy",
+                "nav_bi": "BI & Data",
+                "nav_ai": "AI Sim",
+                "nav_ai_full": "AI Strategic Sim ✨",
+                "nav_career": "Career",
+                "nav_whatsapp": "Direct WhatsApp",
+                "hero_badge": "Occupational Health & Corporate Wellness",
+                "hero_h1": "Strategic Health, <br> <span class=\"gradient-text\">Wellness & Regulatory</span> Leader.",
+                "hero_desc": "I am <strong class=\"text-white\">Dr. Han</strong>. I spearhead the transformation of corporate health, aligning strict regulatory compliance with wellness strategies that drive profitability and safeguard operations.",
+                "hero_btn_vision": "View Strategic Vision",
+                "hero_btn_ai": "Try AI Simulator",
+                "badge_id_label": "Professional License",
+                "about_title": "Beyond Occupational Medicine: <span class=\"text-teal\">Risk Management.</span>",
+                "about_desc": "I transform Occupational Health from an operational requirement into a competitive advantage. I design and implement regulatory compliance and corporate wellness strategies that not only mitigate legal risks (STPS/ISO) but optimize productivity and ensure business continuity.",
+                "card1_title": "Regulatory Leadership",
+                "card1_desc": "Rigorous implementation of STPS and ISO 45001 regulations. Proactive management to avoid fines and ensure operational continuity.",
+                "card2_title": "Corporate Wellness (ROI)",
+                "card2_desc": "Wellness programs designed not only for health but to improve productivity, talent retention, and lower risk premiums.",
+                "card3_title": "Crisis Management",
+                "card3_desc": "Proven experience in epidemiological surveillance and rapid response to health emergencies in high-flow environments like aviation.",
+                "bi_tag": "Data-Driven Health",
+                "bi_title": "Data-Driven Decisions. <br> <span class=\"text-sky\">Not Assumptions.</span>",
+                "bi_desc": "I modernize medical management by deploying executive dashboards in <strong>Looker Studio</strong>, monitoring critical KPIs in real-time to preempt risks.",
+                "bi_list1": "Accident rate and risk premium analysis.",
+                "bi_list2": "Regulatory compliance tracking (Real-time).",
+                "bi_list3": "Digital clinical audit.",
+                "dash_risk": "Risk Premium",
+                "dash_iso": "ISO Compliance",
+                "dash_current": "Current",
+                "ai_badge": "Powered by Gemini AI",
+                "ai_title": "AI Strategic Simulator",
+                "ai_desc": "Technology is an extension of strategy. Enter a current challenge your company faces and see how a data-driven and compliance-focused approach would generate an initial solution.",
+                "ai_label": "Describe a challenge (e.g., \"High absenteeism due to stress\")",
+                "ai_btn": "Generate Strategy ✨",
+                "ai_disclaimer": "Model: Gemini 2.5 Flash. Response generated in real-time.",
+                "ai_preview_title": "Strategic Report Preview",
+                "ai_waiting": "\"Waiting for strategic input to start analysis...\"",
+                "traj_title": "Career Highlights",
+                "traj_1_role": "Occupational Health",
+                "traj_1_desc": "Strategic management of medical services and preventive medicine. Optimization of operational personnel's psychophysical fitness and strict compliance with federal regulations (STPS/SCT), guaranteeing business continuity and reducing legal risks.",
+                "traj_2_title": "Strategic Innovation & Solution Delivery",
+                "traj_2_role": "Health Infrastructure",
+                "traj_2_desc": "I design solutions where infrastructure and health converge to enhance lives. My focus goes beyond building systems; I aim to generate real, measurable, human impact.",
+                "traj_3_title": "Elite Training",
+                "traj_3_role": "Continuing Education",
+                "traj_3_list1": "Lean Six Sigma:",
+                "traj_3_list1_text": "Clinical process optimization.",
+                "traj_3_list2": "Data Science:",
+                "traj_3_list2_text": "Specialized diplomas for medical management.",
+                "traj_3_list3": "Occupational Health:",
+                "traj_3_list3_text": "Advanced regulatory certifications.",
+                "footer_title": "Shall we discuss strategy and compliance?",
+                "footer_desc": "I am ready to provide executive vision and operational security to your organization.",
+                "footer_btn_email": "Email",
+                "footer_btn_wa": "Direct WhatsApp",
+                "footer_role": "Dr. Han | Strategic Health",
+                "badge_id_footer": "Dr. Edgar Ivan Bañuelos Han - License:",
+                "footer_rights": "© 2026 Dr. Han Medical. All rights reserved."
+            }
+        };
+
+        const placeholders = {
+            "es": "Ej: Nuestra prima de riesgo aumentó un 10% el último año debido a accidentes en almacén. Necesitamos un plan de contención rápido.",
+            "en": "Ex: Our risk premium increased by 10% last year due to warehouse accidents. We need a rapid containment plan."
+        }
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'es' ? 'en' : 'es';
+            
+            // Update Toggle Buttons Text
+            const nextLang = currentLang === 'es' ? 'EN' : 'ES';
+            langToggle.innerText = nextLang;
+            langToggleMobile.innerText = nextLang;
+
+            // Update Content
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    // Use innerHTML to preserve html tags inside translation strings
+                    element.innerHTML = translations[currentLang][key];
+                }
+            });
+
+            // Update Placeholders
+            const aiInput = document.getElementById('ai-input');
+            if (aiInput) {
+                aiInput.placeholder = placeholders[currentLang];
+            }
+        }
+
+        langToggle.addEventListener('click', toggleLanguage);
+        langToggleMobile.addEventListener('click', toggleLanguage);
+
+        // ----------------------------------------------------
+        // GEMINI API INTEGRATION
+        // ----------------------------------------------------
+        const generateBtn = document.getElementById('ai-generate-btn');
+        const aiInput = document.getElementById('ai-input');
+        const aiResult = document.getElementById('ai-result');
+        const aiLoader = document.getElementById('ai-loader');
+
+        generateBtn.addEventListener('click', async () => {
+            const userQuery = aiInput.value.trim();
+            if (!userQuery) {
+                alert(currentLang === 'es' ? "Por favor describa un reto o situación." : "Please describe a challenge or situation.");
+                return;
+            }
+
+            // UI State: Loading
+            generateBtn.disabled = true;
+            generateBtn.innerHTML = currentLang === 'es' ? '<span class="opacity-70">Analizando...</span>' : '<span class="opacity-70">Analyzing...</span>';
+            aiLoader.classList.remove('hidden');
+            aiResult.innerHTML = currentLang === 'es' 
+                ? '<p class="text-gray-400 italic">Consultando base de conocimientos regulatorios...</p>' 
+                : '<p class="text-gray-400 italic">Consulting regulatory knowledge base...</p>';
+
+            const apiKey = ""; // API Key handled by environment
+            
+            // Define Prompt based on language
+            let systemPromptText = "";
+            if (currentLang === 'es') {
+                systemPromptText = `
+                Actúa como el Dr. Edgar Ivan Bañuelos Han (Dr. Han), un Líder Estratégico en Salud y Regulación (Strategic Health & Regulatory Leader).
+                Tu tono es ejecutivo, directo, profesional y enfocado en datos (Data-Driven).
+                
+                El usuario (un directivo o reclutador) te planteará un problema de salud corporativa o cumplimiento.
+                Tu tarea es responder con una propuesta estratégica breve y contundente.
+                
+                Estructura tu respuesta en formato HTML simple (usa <p>, <strong>, <ul>, <li>):
+                1. **Diagnóstico Ejecutivo:** Breve análisis del riesgo (multas STPS, impacto en prima de riesgo, productividad).
+                2. **Acción Estratégica:** 2-3 pasos concretos que tomarías. Menciona herramientas como Looker Studio, ISO 45001 o Lean Six Sigma si aplica.
+                3. **Impacto en Negocio (ROI):** Cómo esta solución ahorra dinero o protege a la empresa.
+
+                Mantén la respuesta en menos de 150 palabras. Idioma: Español.
+            `;
+            } else {
+                 systemPromptText = `
+                Act as Dr. Edgar Ivan Bañuelos Han (Dr. Han), a Strategic Health & Regulatory Leader.
+                Your tone is executive, direct, professional, and Data-Driven.
+                
+                The user (an executive or recruiter) will present a corporate health or compliance issue.
+                Your task is to respond with a brief and impactful strategic proposal.
+                
+                Structure your response in simple HTML format (use <p>, <strong>, <ul>, <li>):
+                1. **Executive Diagnosis:** Brief risk analysis (fines, risk premium impact, productivity).
+                2. **Strategic Action:** 2-3 concrete steps you would take. Mention tools like Looker Studio, ISO 45001, or Lean Six Sigma if applicable.
+                3. **Business Impact (ROI):** How this solution saves money or shields the company.
+
+                Keep the response under 150 words. Language: English.
+            `;
+            }
+
+
+            try {
+                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        contents: [{
+                            parts: [{ text: userQuery }]
+                        }],
+                        systemInstruction: {
+                            parts: [{ text: systemPromptText }]
+                        }
+                    })
+                });
+
+                if (!response.ok) throw new Error('Error en la API');
+
+                const data = await response.json();
+                const generatedText = data.candidates?.[0]?.content?.parts?.[0]?.text || (currentLang === 'es' ? "No se pudo generar una respuesta estratégica en este momento." : "Could not generate a strategic response at this time.");
+
+                // UI Update: Success
+                // Convert simple markdown-like bold to html bold if model returns **text**
+                const formattedText = generatedText
+                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                    .replace(/\n/g, '<br>');
+
+                aiResult.innerHTML = formattedText;
+
+            } catch (error) {
+                console.error(error);
+                aiResult.innerHTML = '<p class="text-red-500">Error de conexión con el servidor de estrategia. Por favor intente de nuevo.</p>';
+            } finally {
+                generateBtn.disabled = false;
+                generateBtn.innerHTML = currentLang === 'es' ? '<span>Generar estrategia ✨</span>' : '<span>Generate Strategy ✨</span>';
+                aiLoader.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
