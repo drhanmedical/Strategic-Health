@@ -686,8 +686,12 @@
                 ? '<p class="text-gray-400 italic">Consultando base de conocimientos regulatorios...</p>' 
                 : '<p class="text-gray-400 italic">Consulting regulatory knowledge base...</p>';
 
-            const apiKey = ""; // API Key handled by environment
-            
+            // INSTRUCCIÓN IMPORTANTE PARA TU PROPIO HOSTING:
+            // 1. Ve a https://aistudio.google.com/app/apikey y obtén una API Key gratuita.
+            // 2. Pégala abajo entre las comillas para que funcione fuera de este editor.
+            // Ejemplo: const apiKey = "AIzaSy...";
+            const apiKey = ""; 
+
             // Define Prompt based on language
             let systemPromptText = "";
             if (currentLang === 'es') {
@@ -739,7 +743,13 @@
                     })
                 });
 
-                if (!response.ok) throw new Error('Error en la API');
+                if (!response.ok) {
+                     // Check for 400/403 which usually means invalid key
+                     if (response.status === 400 || response.status === 403) {
+                         throw new Error('API Key inválida o faltante. Configura tu clave en el código.');
+                     }
+                     throw new Error('Error en la API: ' + response.statusText);
+                }
 
                 const data = await response.json();
                 const generatedText = data.candidates?.[0]?.content?.parts?.[0]?.text || (currentLang === 'es' ? "No se pudo generar una respuesta estratégica en este momento." : "Could not generate a strategic response at this time.");
@@ -754,7 +764,19 @@
 
             } catch (error) {
                 console.error(error);
-                aiResult.innerHTML = '<p class="text-red-500">Error de conexión con el servidor de estrategia. Por favor intente de nuevo.</p>';
+                // Update the UI message to be more helpful
+                let errorMsg = currentLang === 'es' 
+                    ? 'Error: Verifique la API Key en el código o la conexión.' 
+                    : 'Error: Check API Key in code or connection.';
+                
+                // If specific error text
+                if (error.message.includes('API Key') || error.message.includes('400')) {
+                     errorMsg = currentLang === 'es'
+                        ? 'Falta configurar la API Key en el código (línea ~477).'
+                        : 'Missing API Key configuration in code (line ~477).';
+                }
+
+                aiResult.innerHTML = `<p class="text-red-500 text-center italic">${errorMsg}</p>`;
             } finally {
                 generateBtn.disabled = false;
                 generateBtn.innerHTML = currentLang === 'es' ? '<span>Generar estrategia ✨</span>' : '<span>Generate Strategy ✨</span>';
