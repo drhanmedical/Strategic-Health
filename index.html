@@ -244,9 +244,13 @@
                             <i class="fas fa-chart-pie w-5"></i>
                             <span class="font-medium text-sm">Dashboard General</span>
                         </button>
+                        <button onclick="switchDashTab('nom035')" id="tab-nom035" class="dash-sidebar-btn w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-400 text-left">
+                            <i class="fas fa-brain w-5"></i>
+                            <span class="font-medium text-sm">Psicosocial NOM-035</span>
+                        </button>
                         <button onclick="switchDashTab('riesgos')" id="tab-riesgos" class="dash-sidebar-btn w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-400 text-left">
-                            <i class="fas fa-triangle-exclamation w-5"></i>
-                            <span class="font-medium text-sm">Riesgos (ST-7)</span>
+                            <i class="fas fa-people-carry-box w-5"></i>
+                            <span class="font-medium text-sm">Ergonomía NOM-036</span>
                         </button>
                         <button onclick="switchDashTab('wellness')" id="tab-wellness" class="dash-sidebar-btn w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-400 text-left">
                             <i class="fas fa-heart-pulse w-5"></i>
@@ -275,11 +279,13 @@
                             <p class="text-gray-400 text-xs mt-1">Status: En línea • Datos actualizados</p>
                         </div>
                         <div class="flex items-center space-x-3">
+                            <!-- Filtro administrativo actualizado -->
                             <select id="deptFilter" onchange="updateCharts()" class="bg-white border border-gray-200 text-navy text-sm rounded-lg focus:ring-teal focus:border-teal block w-full p-2.5 shadow-sm font-medium">
                                 <option value="all">Global (Todos)</option>
-                                <option value="ops">Operaciones</option>
-                                <option value="mant">Mantenimiento</option>
-                                <option value="cedis">CEDIS</option>
+                                <option value="rh">Recursos Humanos</option>
+                                <option value="fin">Finanzas & Admin</option>
+                                <option value="ti">Tecnología (TI)</option>
+                                <option value="com">Comercial / Ventas</option>
                             </select>
                             <button class="bg-white p-2.5 rounded-lg border border-gray-200 text-gray-400 hover:text-teal shadow-sm transition-colors" title="Descargar Reporte">
                                 <i class="fas fa-download"></i>
@@ -298,7 +304,7 @@
                                     <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Días Incapacidad</span>
                                     <div class="w-8 h-8 rounded-lg bg-red-50 flex items-center justify-center text-red-500"><i class="fas fa-bed-pulse"></i></div>
                                 </div>
-                                <h4 class="text-3xl font-heading font-bold text-navy mb-1" id="kpi-days">142</h4>
+                                <h4 class="text-3xl font-heading font-bold text-navy mb-1" id="kpi-days">42</h4>
                                 <span class="text-green-600 text-xs font-bold flex items-center"><i class="fas fa-arrow-down mr-1"></i>12% vs año ant</span>
                             </div>
 
@@ -320,7 +326,7 @@
                                     <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Prima de Riesgo</span>
                                     <div class="w-8 h-8 rounded-lg bg-sky/10 flex items-center justify-center text-sky"><i class="fas fa-chart-line"></i></div>
                                 </div>
-                                <h4 class="text-3xl font-heading font-bold text-navy mb-1" id="kpi-risk">0.85</h4>
+                                <h4 class="text-3xl font-heading font-bold text-navy mb-1" id="kpi-risk">0.55</h4>
                                 <span class="text-green-600 text-xs font-bold flex items-center"><i class="fas fa-arrow-down mr-1"></i> Optimizado</span>
                             </div>
 
@@ -331,73 +337,229 @@
                                     <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Costo Siniestralidad</span>
                                     <div class="w-8 h-8 rounded-lg bg-orange-50 flex items-center justify-center text-orange-500"><i class="fas fa-sack-dollar"></i></div>
                                 </div>
-                                <h4 class="text-3xl font-heading font-bold text-navy mb-1" id="kpi-cost">$85k</h4>
+                                <h4 class="text-3xl font-heading font-bold text-navy mb-1" id="kpi-cost">$35k</h4>
                                 <span class="text-green-600 text-xs font-bold flex items-center">Bajo Presupuesto</span>
                             </div>
                         </div>
 
-                        <!-- Charts -->
-                        <div class="grid lg:grid-cols-3 gap-6">
-                            <div class="lg:col-span-2 bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                                <h5 class="font-bold text-navy mb-4 text-sm flex items-center">
-                                    <i class="fas fa-chart-area text-sky mr-2"></i> Tendencia de Siniestralidad vs Costos
-                                </h5>
-                                <div class="h-64 w-full">
-                                    <canvas id="trendChart"></canvas>
-                                </div>
+                        <!-- Main Trend Chart -->
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 mb-8">
+                            <h5 class="font-bold text-navy mb-4 text-sm flex items-center">
+                                <i class="fas fa-chart-area text-sky mr-2"></i> Tendencia de Incidencias vs Costos
+                            </h5>
+                            <div class="h-64 w-full">
+                                <canvas id="trendChart"></canvas>
                             </div>
+                        </div>
+
+                        <!-- Distribución: Departamentos y Puestos -->
+                        <div class="grid lg:grid-cols-2 gap-6">
                             <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                                 <h5 class="font-bold text-navy mb-4 text-sm flex items-center">
-                                    <i class="fas fa-chart-pie text-teal mr-2"></i> Riesgo por Área
+                                    <i class="fas fa-building text-teal mr-2"></i> Distribución por Departamento
                                 </h5>
                                 <div class="h-64 w-full flex items-center justify-center">
                                     <canvas id="deptChart"></canvas>
                                 </div>
                             </div>
+                            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                                <h5 class="font-bold text-navy mb-4 text-sm flex items-center">
+                                    <i class="fas fa-id-card text-indigo-500 mr-2"></i> Incidencias por Puesto
+                                </h5>
+                                <div class="h-64 w-full">
+                                    <canvas id="jobChart"></canvas>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- VIEW: RIESGOS -->
+                    <!-- VIEW: PSICOSOCIAL NOM-035 (NUEVO) -->
+                    <div id="view-nom035" class="dash-view hidden animate-fade-in">
+                        
+                        <!-- Compliance Goal Header -->
+                        <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm mb-8 flex flex-col md:flex-row justify-between items-center gap-6">
+                            <div class="flex-1 w-full">
+                                <div class="flex justify-between items-end mb-2">
+                                    <div>
+                                        <h4 class="text-lg font-heading font-bold text-navy">Objetivo de Cumplimiento NOM-035</h4>
+                                        <p class="text-xs text-gray-500">Avance global de implementación (Guías I, II y III)</p>
+                                    </div>
+                                    <span class="text-2xl font-bold text-indigo-600" id="kpi-035-progress">92%</span>
+                                </div>
+                                <div class="w-full bg-gray-100 rounded-full h-3">
+                                    <div class="bg-indigo-600 h-3 rounded-full transition-all duration-1000" style="width: 92%"></div>
+                                </div>
+                                <div class="flex justify-between mt-2 text-[10px] uppercase font-bold text-gray-400 tracking-wider">
+                                    <span>Política Prevención</span>
+                                    <span>Identificación</span>
+                                    <span>Análisis</span>
+                                    <span class="text-indigo-600">Medidas (En curso)</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Mini Stat -->
+                            <div class="flex items-center gap-4 border-l border-gray-100 pl-6">
+                                <div class="text-right">
+                                    <p class="text-2xl font-bold text-red-500" id="kpi-035-ats">3</p>
+                                    <p class="text-[10px] font-bold text-gray-400 uppercase">Casos ATS Activos</p>
+                                </div>
+                                <div class="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center text-red-500">
+                                    <i class="fas fa-user-nurse"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 035 Charts -->
+                        <div class="grid lg:grid-cols-2 gap-6 mb-8">
+                            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                                <h5 class="font-bold text-navy mb-4 text-sm flex items-center">
+                                    <i class="fas fa-project-diagram text-indigo-500 mr-2"></i> Dominios de Riesgo (Radar)
+                                </h5>
+                                <div class="h-72 w-full flex items-center justify-center">
+                                    <canvas id="nom035RadarChart"></canvas>
+                                </div>
+                            </div>
+                            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                                <h5 class="font-bold text-navy mb-4 text-sm flex items-center">
+                                    <i class="fas fa-users text-teal mr-2"></i> Nivel de Riesgo Poblacional
+                                </h5>
+                                <div class="h-72 w-full flex items-center justify-center">
+                                    <canvas id="nom035PieChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Critical Areas Table -->
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                            <h5 class="font-bold text-navy mb-4 text-sm flex items-center text-indigo-600">
+                                <i class="fas fa-clipboard-list mr-2"></i> Departamentos Prioritarios (Intervención Psicosocial)
+                            </h5>
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-sm text-left text-gray-500">
+                                    <thead class="text-xs text-gray-400 uppercase bg-gray-50 font-bold">
+                                        <tr>
+                                            <th class="px-4 py-3 rounded-l-lg">Departamento</th>
+                                            <th class="px-4 py-3">Dominio Crítico</th>
+                                            <th class="px-4 py-3">Nivel Riesgo</th>
+                                            <th class="px-4 py-3 rounded-r-lg">Plan de Acción</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-gray-100">
+                                        <tr>
+                                            <td class="px-4 py-3 font-bold text-navy">Ventas Corporativas</td>
+                                            <td class="px-4 py-3">Carga de Trabajo</td>
+                                            <td class="px-4 py-3"><span class="bg-red-100 text-red-700 px-2 py-1 rounded text-xs font-bold">Muy Alto</span></td>
+                                            <td class="px-4 py-3 text-xs">Revisión de Metas y Jornadas</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-4 py-3 font-bold text-navy">Soporte TI</td>
+                                            <td class="px-4 py-3">Jornada de Trabajo</td>
+                                            <td class="px-4 py-3"><span class="bg-orange-100 text-orange-700 px-2 py-1 rounded text-xs font-bold">Alto</span></td>
+                                            <td class="px-4 py-3 text-xs">Programa de Pausas Activas</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-4 py-3 font-bold text-navy">Finanzas</td>
+                                            <td class="px-4 py-3">Liderazgo</td>
+                                            <td class="px-4 py-3"><span class="bg-yellow-100 text-yellow-700 px-2 py-1 rounded text-xs font-bold">Medio</span></td>
+                                            <td class="px-4 py-3 text-xs">Taller de Comunicación</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- VIEW: ERGONOMÍA NOM-036 (ACTUALIZADO) -->
                     <div id="view-riesgos" class="dash-view hidden animate-fade-in">
+                        
+                        <!-- Ergo KPIs -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+                            <div class="kpi-card bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Puestos Evaluados (NOM-036)</span>
+                                    <div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-blue-500"><i class="fas fa-clipboard-check"></i></div>
+                                </div>
+                                <h4 class="text-3xl font-heading font-bold text-navy mb-1" id="kpi-ergo-eval">85%</h4>
+                                <span class="text-xs text-gray-500">Cobertura Total</span>
+                            </div>
+                            <div class="kpi-card bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Riesgo Alto Detectado</span>
+                                    <div class="w-8 h-8 rounded-lg bg-red-50 flex items-center justify-center text-red-500"><i class="fas fa-triangle-exclamation"></i></div>
+                                </div>
+                                <h4 class="text-3xl font-heading font-bold text-navy mb-1" id="kpi-ergo-risk">12%</h4>
+                                <span class="text-xs text-red-500 font-bold">Requiere Intervención</span>
+                            </div>
+                            <div class="kpi-card bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Sobreesfuerzos (ST-7)</span>
+                                    <div class="w-8 h-8 rounded-lg bg-orange-50 flex items-center justify-center text-orange-600"><i class="fas fa-user-injured"></i></div>
+                                </div>
+                                <h4 class="text-3xl font-heading font-bold text-navy mb-1" id="kpi-ergo-st7">2</h4>
+                                <span class="text-green-600 text-xs font-bold">-50% vs año anterior</span>
+                            </div>
+                        </div>
+
+                        <!-- Ergo Charts -->
+                        <div class="grid lg:grid-cols-2 gap-6 mb-8">
+                            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                                <h5 class="font-bold text-navy mb-4 text-sm flex items-center">
+                                    <i class="fas fa-layer-group text-orange-500 mr-2"></i> Nivel de Riesgo NOM-036 (Estimación)
+                                </h5>
+                                <div class="h-64 w-full flex items-center justify-center">
+                                    <canvas id="ergoRiskChart"></canvas>
+                                </div>
+                            </div>
+                            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                                <h5 class="font-bold text-navy mb-4 text-sm flex items-center">
+                                    <i class="fas fa-person-walking-luggage text-teal mr-2"></i> Sintomatología Detectada (Encuestas)
+                                </h5>
+                                <div class="h-64 w-full">
+                                    <canvas id="bodyPartChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Table -->
                         <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 mb-6">
                             <div class="flex justify-between items-center mb-6">
-                                <h5 class="font-heading font-bold text-navy">Gestión de Casos ST-7 (IMSS)</h5>
+                                <h5 class="font-heading font-bold text-navy">Bitácora de Evaluación Ergonómica</h5>
                                 <button class="bg-teal hover:bg-teal/90 text-white px-3 py-1.5 rounded text-xs font-bold uppercase tracking-wider transition-colors">
-                                    <i class="fas fa-file-export mr-1"></i> Exportar
+                                    <i class="fas fa-file-pdf mr-1"></i> Informe Técnico
                                 </button>
                             </div>
                             <div class="overflow-x-auto">
                                 <table class="w-full text-sm text-left text-gray-500">
                                     <thead class="text-xs text-gray-400 uppercase bg-gray-50 font-bold">
                                         <tr>
-                                            <th class="px-4 py-3 rounded-l-lg">Folio</th>
-                                            <th class="px-4 py-3">Empleado</th>
-                                            <th class="px-4 py-3">Depto</th>
-                                            <th class="px-4 py-3">Estado</th>
-                                            <th class="px-4 py-3 text-right rounded-r-lg">Costo Est.</th>
+                                            <th class="px-4 py-3 rounded-l-lg">Puesto / Actividad</th>
+                                            <th class="px-4 py-3">Peso Real (Kg)</th>
+                                            <th class="px-4 py-3">Límite Permisible</th>
+                                            <th class="px-4 py-3">Nivel Riesgo</th>
+                                            <th class="px-4 py-3 text-right rounded-r-lg">Estatus</th>
                                         </tr>
                                     </thead>
                                     <tbody class="divide-y divide-gray-100">
                                         <tr class="hover:bg-slate transition cursor-pointer">
-                                            <td class="px-4 py-3 font-bold text-navy">ST7-002</td>
-                                            <td class="px-4 py-3">Juan Pérez</td>
-                                            <td class="px-4 py-3">Mantenimiento</td>
-                                            <td class="px-4 py-3"><span class="bg-yellow-100 text-yellow-700 px-2 py-1 rounded text-xs font-bold">En Proceso</span></td>
-                                            <td class="px-4 py-3 text-right">$12,400</td>
+                                            <td class="px-4 py-3 font-bold text-navy">Estibador (Carga Manual)</td>
+                                            <td class="px-4 py-3 text-red-600 font-bold">28 kg</td>
+                                            <td class="px-4 py-3">25 kg</td>
+                                            <td class="px-4 py-3"><span class="bg-red-100 text-red-700 px-2 py-1 rounded text-xs font-bold">Alto</span></td>
+                                            <td class="px-4 py-3 text-right text-xs">Rediseño Pendiente</td>
                                         </tr>
                                         <tr class="hover:bg-slate transition cursor-pointer">
-                                            <td class="px-4 py-3 font-bold text-navy">ST7-001</td>
-                                            <td class="px-4 py-3">Ana García</td>
-                                            <td class="px-4 py-3">Operaciones</td>
-                                            <td class="px-4 py-3"><span class="bg-green-100 text-green-700 px-2 py-1 rounded text-xs font-bold">Cerrado</span></td>
-                                            <td class="px-4 py-3 text-right">$4,200</td>
+                                            <td class="px-4 py-3 font-bold text-navy">Operador Línea 2</td>
+                                            <td class="px-4 py-3 text-green-600 font-bold">15 kg</td>
+                                            <td class="px-4 py-3">25 kg</td>
+                                            <td class="px-4 py-3"><span class="bg-green-100 text-green-700 px-2 py-1 rounded text-xs font-bold">Bajo</span></td>
+                                            <td class="px-4 py-3 text-right text-xs">Conforme</td>
                                         </tr>
                                         <tr class="hover:bg-slate transition cursor-pointer">
-                                            <td class="px-4 py-3 font-bold text-navy">ST9-005</td>
-                                            <td class="px-4 py-3">Luis Torres</td>
-                                            <td class="px-4 py-3">CEDIS</td>
-                                            <td class="px-4 py-3"><span class="bg-red-100 text-red-700 px-2 py-1 rounded text-xs font-bold">Calificado Sí</span></td>
-                                            <td class="px-4 py-3 text-right">$45,000</td>
+                                            <td class="px-4 py-3 font-bold text-navy">Almacenista (Picking)</td>
+                                            <td class="px-4 py-3 text-orange-600 font-bold">22 kg</td>
+                                            <td class="px-4 py-3">25 kg</td>
+                                            <td class="px-4 py-3"><span class="bg-orange-100 text-orange-700 px-2 py-1 rounded text-xs font-bold">Medio</span></td>
+                                            <td class="px-4 py-3 text-right text-xs">Vigilancia Médica</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -620,6 +782,11 @@
         let deptChartInstance = null;
         let wellnessBMIChartInstance = null;
         let wellnessChronicChartInstance = null;
+        let ergoRiskChartInstance = null;
+        let bodyPartChartInstance = null;
+        let jobChartInstance = null;
+        let nom035RadarChartInstance = null;
+        let nom035PieChartInstance = null;
 
         function initDashboard() {
             // 1. General: Trend Chart
@@ -658,23 +825,48 @@
                 }
             });
 
-            // 2. General: Dept Chart
+            // 2. General: Dept Chart (Updated for Admin)
             const ctxDept = document.getElementById('deptChart').getContext('2d');
             deptChartInstance = new Chart(ctxDept, {
                 type: 'doughnut',
                 data: {
-                    labels: ['Operaciones', 'Mantenimiento', 'CEDIS'],
+                    labels: ['RH', 'Finanzas', 'TI', 'Ventas', 'Dirección'],
                     datasets: [{
-                        data: [65, 25, 10],
-                        backgroundColor: ['#0f172a', '#0d9488', '#0ea5e9'], // Navy, Teal, Sky
+                        data: [15, 10, 25, 40, 10],
+                        backgroundColor: ['#0d9488', '#facc15', '#6366f1', '#f97316', '#0f172a'], 
                         borderWidth: 0
                     }]
                 },
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
-                    plugins: { legend: { position: 'bottom' } },
-                    cutout: '75%'
+                    plugins: { legend: { position: 'right' } },
+                    cutout: '70%'
+                }
+            });
+
+            // 2.5 General: Job Position Chart (New)
+            const ctxJob = document.getElementById('jobChart').getContext('2d');
+            jobChartInstance = new Chart(ctxJob, {
+                type: 'bar',
+                data: {
+                    labels: ['Analista', 'Ejecutivo', 'Gerente', 'Becario', 'Director'],
+                    datasets: [{
+                        label: 'Incidencias',
+                        data: [12, 8, 5, 3, 1],
+                        backgroundColor: '#0ea5e9',
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: { grid: { display: false } },
+                        y: { grid: { display: false } }
+                    }
                 }
             });
 
@@ -725,6 +917,92 @@
                     }
                 }
             });
+
+            // 5. Ergo: Risk Level (Pie)
+            const ctxErgoRisk = document.getElementById('ergoRiskChart').getContext('2d');
+            ergoRiskChartInstance = new Chart(ctxErgoRisk, {
+                type: 'pie',
+                data: {
+                    labels: ['Bajo (Verde)', 'Medio (Amarillo)', 'Alto (Naranja)', 'Muy Alto (Rojo)'],
+                    datasets: [{
+                        data: [60, 25, 10, 5],
+                        backgroundColor: ['#22c55e', '#facc15', '#f97316', '#ef4444'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { position: 'bottom' } }
+                }
+            });
+
+            // 6. Ergo: Body Part Symptoms (Doughnut) - Reusing canvas id bodyPartChart
+            const ctxBodyPart = document.getElementById('bodyPartChart').getContext('2d');
+            bodyPartChartInstance = new Chart(ctxBodyPart, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Zona Lumbar', 'Hombros', 'Cuello', 'Rodillas', 'Muñecas'],
+                    datasets: [{
+                        data: [40, 20, 15, 15, 10],
+                        backgroundColor: ['#ef4444', '#f97316', '#facc15', '#0ea5e9', '#0d9488'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { 
+                        legend: { position: 'right' }
+                    },
+                    cutout: '60%'
+                }
+            });
+
+            // 7. NOM-035: Radar Chart
+            const ctxNom035Radar = document.getElementById('nom035RadarChart').getContext('2d');
+            nom035RadarChartInstance = new Chart(ctxNom035Radar, {
+                type: 'radar',
+                data: {
+                    labels: ['Ambiente Trabajo', 'Carga Trabajo', 'Jornada', 'Liderazgo', 'Relaciones', 'Violencia'],
+                    datasets: [{
+                        label: 'Nivel de Riesgo (Pts)',
+                        data: [3, 5, 4, 3, 2, 1],
+                        backgroundColor: 'rgba(99, 102, 241, 0.2)', // Indigo transparent
+                        borderColor: '#6366f1',
+                        pointBackgroundColor: '#6366f1',
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            suggestedMin: 0,
+                            suggestedMax: 5
+                        }
+                    }
+                }
+            });
+
+            // 8. NOM-035: Pie Chart
+            const ctxNom035Pie = document.getElementById('nom035PieChart').getContext('2d');
+            nom035PieChartInstance = new Chart(ctxNom035Pie, {
+                type: 'pie',
+                data: {
+                    labels: ['Nulo', 'Bajo', 'Medio', 'Alto', 'Muy Alto'],
+                    datasets: [{
+                        data: [15, 45, 25, 10, 5],
+                        backgroundColor: ['#22c55e', '#84cc16', '#facc15', '#f97316', '#ef4444'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { position: 'bottom' } }
+                }
+            });
         }
 
         function switchDashTab(tabName) {
@@ -747,43 +1025,97 @@
             const filter = document.getElementById('deptFilter').value;
             
             // Simulación de cambio de datos por filtro
-            if (filter === 'ops') {
+            if (filter === 'rh') {
                 // General
                 trendChartInstance.data.datasets[0].data = [30000, 28000, 25000, 24000, 20000, 18000];
-                document.getElementById('kpi-days').innerText = "85";
-                document.getElementById('kpi-risk').innerText = "0.92";
-                
-                // Wellness
-                wellnessBMIChartInstance.data.datasets[0].data = [30, 40, 20, 10]; // Más sobrepeso en Ops
-                wellnessChronicChartInstance.data.datasets[0].data = [15, 10, 35, 12, 20]; // Más musculoesquelético
-                document.getElementById('kpi-well-index').innerText = "7.8/10";
-                
-            } else if (filter === 'mant') {
-                // General
-                trendChartInstance.data.datasets[0].data = [10000, 5000, 2000, 1000, 500, 0];
                 document.getElementById('kpi-days').innerText = "12";
-                document.getElementById('kpi-risk').innerText = "0.55";
+                document.getElementById('kpi-risk').innerText = "0.2";
+                
+                // Job
+                jobChartInstance.data.datasets[0].data = [5, 3, 2, 1, 0];
 
                 // Wellness
                 wellnessBMIChartInstance.data.datasets[0].data = [50, 30, 15, 5]; 
-                wellnessChronicChartInstance.data.datasets[0].data = [5, 2, 10, 5, 3];
-                document.getElementById('kpi-well-index').innerText = "9.1/10";
+                wellnessChronicChartInstance.data.datasets[0].data = [5, 2, 10, 5, 20]; // Alto estrés
+                document.getElementById('kpi-well-index').innerText = "8.8/10";
+
+                // Ergo
+                ergoRiskChartInstance.data.datasets[0].data = [70, 20, 10, 0]; 
+                bodyPartChartInstance.data.datasets[0].data = [20, 20, 40, 5, 15]; // Cuello alto
+                document.getElementById('kpi-ergo-eval').innerText = "100%";
+                document.getElementById('kpi-ergo-risk').innerText = "5%"; 
+
+                // NOM-035 (RH suele tener carga mental)
+                nom035RadarChartInstance.data.datasets[0].data = [2, 4, 3, 2, 3, 1];
+                nom035PieChartInstance.data.datasets[0].data = [20, 50, 20, 8, 2];
+                document.getElementById('kpi-035-ats').innerText = "0";
+                
+            } else if (filter === 'ti') {
+                // General
+                trendChartInstance.data.datasets[0].data = [10000, 12000, 11000, 10000, 9000, 8000];
+                document.getElementById('kpi-days').innerText = "5";
+                document.getElementById('kpi-risk').innerText = "0.1";
+
+                // Job
+                jobChartInstance.data.datasets[0].data = [8, 4, 2, 6, 0];
+
+                // Wellness
+                wellnessBMIChartInstance.data.datasets[0].data = [40, 35, 20, 5]; 
+                wellnessChronicChartInstance.data.datasets[0].data = [5, 2, 10, 8, 10];
+                document.getElementById('kpi-well-index').innerText = "8.5/10";
+
+                // Ergo
+                ergoRiskChartInstance.data.datasets[0].data = [60, 30, 10, 0];
+                bodyPartChartInstance.data.datasets[0].data = [10, 10, 20, 10, 50]; // Muñecas alto (Túnel Carpiano)
+                document.getElementById('kpi-ergo-eval').innerText = "90%";
+                document.getElementById('kpi-ergo-risk').innerText = "8%";
+
+                // NOM-035 (TI - Jornada y Carga)
+                nom035RadarChartInstance.data.datasets[0].data = [2, 5, 5, 3, 2, 0];
+                nom035PieChartInstance.data.datasets[0].data = [10, 30, 30, 20, 10];
+                document.getElementById('kpi-035-ats').innerText = "1";
+
+            } else if (filter === 'com') { // Ventas
+                 // NOM-035 (Ventas - Liderazgo y Relaciones)
+                nom035RadarChartInstance.data.datasets[0].data = [3, 4, 3, 5, 4, 2];
+                nom035PieChartInstance.data.datasets[0].data = [5, 20, 30, 30, 15];
+                document.getElementById('kpi-035-ats').innerText = "2";
 
             } else { // Global
                 // General
                 trendChartInstance.data.datasets[0].data = [45000, 38000, 22000, 18000, 15000, 12000];
-                document.getElementById('kpi-days').innerText = "142";
-                document.getElementById('kpi-risk').innerText = "0.85";
+                document.getElementById('kpi-days').innerText = "42";
+                document.getElementById('kpi-risk').innerText = "0.55";
+
+                // Job
+                jobChartInstance.data.datasets[0].data = [12, 8, 5, 3, 1];
 
                 // Wellness
                 wellnessBMIChartInstance.data.datasets[0].data = [45, 30, 15, 10];
                 wellnessChronicChartInstance.data.datasets[0].data = [12, 8, 25, 18, 15];
                 document.getElementById('kpi-well-index').innerText = "8.4/10";
+
+                // Ergo
+                ergoRiskChartInstance.data.datasets[0].data = [60, 25, 10, 5];
+                bodyPartChartInstance.data.datasets[0].data = [40, 20, 15, 15, 10];
+                document.getElementById('kpi-ergo-eval').innerText = "85%";
+                document.getElementById('kpi-ergo-risk').innerText = "12%";
+
+                // NOM-035
+                nom035RadarChartInstance.data.datasets[0].data = [3, 5, 4, 3, 2, 1];
+                nom035PieChartInstance.data.datasets[0].data = [15, 45, 25, 10, 5];
+                document.getElementById('kpi-035-ats').innerText = "3";
             }
             
             trendChartInstance.update();
+            deptChartInstance.update();
+            jobChartInstance.update();
             wellnessBMIChartInstance.update();
             wellnessChronicChartInstance.update();
+            ergoRiskChartInstance.update();
+            bodyPartChartInstance.update();
+            nom035RadarChartInstance.update();
+            nom035PieChartInstance.update();
         }
 
         // --- I18N & UI UTILS ---
