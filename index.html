@@ -115,6 +115,8 @@
                 <div class="hidden md:flex space-x-4 lg:space-x-8 items-center">
                     <a href="#hero" class="text-gray-300 hover:text-white transition-colors text-sm font-medium tracking-wide" data-i18n="nav_home">Inicio</a>
                     <a href="#about" class="text-gray-300 hover:text-white transition-colors text-sm font-medium tracking-wide" data-i18n="nav_strategy">Estrategia</a>
+                    <!-- NUEVO LINK -->
+                    <a href="#legal-shield" class="text-red-300 hover:text-red-100 transition-colors text-sm font-bold tracking-wide flex items-center gap-1"><i class="fas fa-shield-halved text-xs"></i> Normatividad</a>
                     <a href="#bi" class="text-teal hover:text-white transition-colors text-sm font-bold tracking-wide" data-i18n="nav_bi">BI & Dashboard</a>
                     <a href="#ai-simulator" class="text-indigo-400 hover:text-indigo-300 transition-colors text-sm font-bold tracking-wide flex items-center gap-1"><i class="fas fa-robot"></i> <span data-i18n="nav_ai">AI Sim</span></a>
                     <a href="#trayectoria" class="text-gray-300 hover:text-white transition-colors text-sm font-medium tracking-wide" data-i18n="nav_career">Trayectoria</a>
@@ -141,6 +143,7 @@
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
                 <a href="#hero" class="block px-3 py-2 text-gray-300 hover:text-white font-medium" data-i18n="nav_home">Inicio</a>
                 <a href="#about" class="block px-3 py-2 text-gray-300 hover:text-white font-medium" data-i18n="nav_strategy">Estrategia</a>
+                <a href="#legal-shield" class="block px-3 py-2 text-red-300 hover:text-white font-medium"><i class="fas fa-shield-halved text-xs"></i> Normatividad</a>
                 <a href="#bi" class="block px-3 py-2 text-teal font-bold" data-i18n="nav_bi">Data & BI</a>
                 <a href="#ai-simulator" class="block px-3 py-2 text-indigo-400 font-bold" data-i18n="nav_ai_full">AI Strategic Sim ✨</a>
                 <a href="#trayectoria" class="block px-3 py-2 text-gray-300 hover:text-white font-medium" data-i18n="nav_career">Trayectoria</a>
@@ -162,7 +165,7 @@
                         Strategic Health, <br>
                         <span class="gradient-text">Wellness & Regulatory</span> Leader.
                     </h1>
-                    <h2 class="text-base lg:text-lg text-gray-400 mb-8 font-light leading-relaxed max-w-2xl mx-auto lg:mx-0 text-justify lg:text-left" data-i18n="hero_desc">
+                    <h2 class="text-base lg:text-lg text-gray-400 mb-8 font-light leading-relaxed max-w-2xl mx-auto lg:mx-0 text-justify hyphens-auto lg:text-left" data-i18n="hero_desc">
                         Soy el <strong class="text-white">Dr. Han</strong>. Lidero la transformación de la salud corporativa, alineando el cumplimiento normativo estricto con estrategias de bienestar que impulsan la rentabilidad y blindan la operación.
                     </h2>
                     
@@ -203,7 +206,7 @@
                     Más allá de la medicina ocupacional: <span class="text-teal">gestión de riesgos.</span>
                 </h2>
                 <div class="w-24 h-1 bg-sky mx-auto rounded mb-6"></div>
-                <p class="text-lg text-gray-600 leading-relaxed text-justify px-4 lg:px-0" data-i18n="about_desc">
+                <p class="text-lg text-gray-600 leading-relaxed text-justify hyphens-auto px-4 lg:px-0" data-i18n="about_desc">
                     Elevo la salud ocupacional de un requisito operativo a una ventaja competitiva. Diseño e implemento estrategias de cumplimiento normativo y bienestar corporativo que no solo mitigan riesgos legales (STPS/ISO), sino que optimizan la productividad y aseguran la continuidad del negocio.
                 </p>
             </div>
@@ -214,7 +217,7 @@
                         <i class="fas fa-scale-balanced text-white text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-heading font-bold text-navy mb-3" data-i18n="card1_title">Liderazgo regulatorio</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed text-justify" data-i18n="card1_desc">Implementación estricta de normatividad STPS e ISO 45001. Gestión proactiva para evitar multas y asegurar la continuidad operativa.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed text-justify hyphens-auto" data-i18n="card1_desc">Implementación estricta de normatividad STPS e ISO 45001. Gestión proactiva para evitar multas y asegurar la continuidad operativa.</p>
                 </div>
 
                 <div class="p-8 rounded-xl bg-slate border border-gray-100 hover:shadow-xl transition-shadow group">
@@ -222,7 +225,7 @@
                         <i class="fas fa-heart-pulse text-white text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-heading font-bold text-navy mb-3" data-i18n="card2_title">Wellness corporativo (ROI)</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed text-justify" data-i18n="card2_desc">Programas de bienestar diseñados no solo para la salud, sino para mejorar la productividad, retención de talento y reducir la prima de riesgo.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed text-justify hyphens-auto" data-i18n="card2_desc">Programas de bienestar diseñados no solo para la salud, sino para mejorar la productividad, retención de talento y reducir la prima de riesgo.</p>
                 </div>
 
                 <div class="p-8 rounded-xl bg-slate border border-gray-100 hover:shadow-xl transition-shadow group">
@@ -230,8 +233,92 @@
                         <i class="fas fa-shield-virus text-white text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-heading font-bold text-navy mb-3" data-i18n="card3_title">Gestión de crisis</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed text-justify" data-i18n="card3_desc">Experiencia probada en vigilancia epidemiológica y respuesta rápida ante emergencias sanitarias en entornos de alto flujo como la aviación.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed text-justify hyphens-auto" data-i18n="card3_desc">Experiencia probada en vigilancia epidemiológica y respuesta rápida ante emergencias sanitarias en entornos de alto flujo como la aviación.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NUEVA SECCIÓN: BLINDAJE REGULATORIO (STPS - COFEPRIS - SEMARNAT) -->
+    <section id="legal-shield" class="py-20 bg-gradient-to-b from-gray-50 to-white border-y border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Encabezado de la Sección -->
+            <div class="mb-12 flex flex-col md:flex-row items-start md:items-end justify-between gap-6">
+                <div class="max-w-3xl">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="px-2 py-1 rounded bg-navy text-white text-[10px] font-bold uppercase tracking-widest">
+                            <i class="fas fa-balance-scale mr-1 text-teal"></i> Compliance 360°
+                        </span>
+                        <span class="text-xs font-bold text-gray-500 uppercase tracking-widest border border-gray-200 px-2 py-1 rounded">
+                            Derecho Sanitario & Normatividad
+                        </span>
+                    </div>
+                    <h2 class="text-3xl font-heading font-bold text-navy">
+                        Blindaje Normativo: <span class="text-teal">STPS • COFEPRIS • SEMARNAT</span>
+                    </h2>
+                    <p class="mt-4 text-gray-600 leading-relaxed text-justify hyphens-auto">
+                        La fiscalización digital es ahora integral. Mi consultoría unifica la gestión de seguridad laboral, responsabilidad sanitaria y cumplimiento ambiental, asegurando que tu operación resista auditorías cruzadas y el nuevo escrutinio del <strong>SIQAL</strong>.
+                    </p>
+                </div>
+                <!-- Botón de llamada a la acción sutil -->
+                <a href="#contact" class="hidden md:flex items-center gap-2 text-sm font-bold text-navy hover:text-teal transition-colors group border-b-2 border-transparent hover:border-teal pb-1">
+                    Auditar mi cumplimiento <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+
+            <!-- Grid de Soluciones de Blindaje -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Card 1: STPS (Laboral) -->
+                <div class="group bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-all hover:border-orange-500 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-orange-50 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-110"></div>
+                    <div class="w-12 h-12 bg-slate-50 rounded-lg flex items-center justify-center mb-4 text-navy group-hover:bg-navy group-hover:text-white transition-colors">
+                        <i class="fas fa-helmet-safety text-xl"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-navy mb-2">STPS & SIQAL</h3>
+                    <p class="text-sm text-gray-500 mb-4 text-justify hyphens-auto">
+                        Gestión estratégica de <strong>Comisiones de Seguridad e Higiene</strong> como primer nivel de defensa. Atención experta a inspecciones del <strong>SIQAL</strong> y cumplimiento de NOMs críticas (030, 035, 036) para blindar la operación ante multas.
+                    </p>
+                    <div class="flex gap-2 text-[10px] font-bold uppercase text-gray-400">
+                        <span class="bg-gray-100 px-2 py-1 rounded">NOM-030</span>
+                        <span class="bg-gray-100 px-2 py-1 rounded">NOM-035</span>
+                        <span class="bg-gray-100 px-2 py-1 rounded">SIQAL</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: COFEPRIS (Sanitario & Datos) -->
+                <div class="group bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-all hover:border-teal relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-teal/5 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-110"></div>
+                    <div class="w-12 h-12 bg-slate-50 rounded-lg flex items-center justify-center mb-4 text-navy group-hover:bg-teal group-hover:text-white transition-colors">
+                        <i class="fas fa-hospital-user text-xl"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-navy mb-2">COFEPRIS & Datos Personales</h3>
+                    <p class="text-sm text-gray-500 mb-4 text-justify hyphens-auto">
+                        Gestión de Avisos de Funcionamiento y Licencias Sanitarias. Validación del Expediente Clínico (NOM-004) y cumplimiento estricto de la <strong>Ley Federal de Protección de Datos Personales (LFPDPPP)</strong> para el manejo seguro de información sensible de pacientes.
+                    </p>
+                    <div class="flex gap-2 text-[10px] font-bold uppercase text-gray-400">
+                        <span class="bg-gray-100 px-2 py-1 rounded">Avisos</span>
+                        <span class="bg-gray-100 px-2 py-1 rounded">LFPDPPP</span>
+                    </div>
+                </div>
+
+                <!-- Card 3: SEMARNAT (Ambiental) -->
+                <div class="group bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-all hover:border-green-500 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-green-50 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-110"></div>
+                    <div class="w-12 h-12 bg-slate-50 rounded-lg flex items-center justify-center mb-4 text-navy group-hover:bg-green-600 group-hover:text-white transition-colors">
+                        <i class="fas fa-recycle text-xl"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-navy mb-2">SEMARNAT (RPBI)</h3>
+                    <p class="text-sm text-gray-500 mb-4 text-justify hyphens-auto">
+                        Gestión ambiental de la unidad médica. Clasificación, manejo y disposición final de Residuos Peligrosos Biológico-Infecciosos (NOM-087-ECOL-SSA1) y planes de manejo de residuos especiales.
+                    </p>
+                    <div class="flex gap-2 text-[10px] font-bold uppercase text-gray-400">
+                        <span class="bg-gray-100 px-2 py-1 rounded">RPBI</span>
+                        <span class="bg-gray-100 px-2 py-1 rounded">NOM-087</span>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -675,6 +762,10 @@
                 </a>
                 <a href="https://wa.me/525629846164" target="_blank" class="px-8 py-4 bg-whatsapp text-white font-bold rounded hover:bg-green-600 transition-colors flex items-center justify-center gap-3">
                     <i class="fab fa-whatsapp"></i> <span data-i18n="footer_btn_wa">WhatsApp directo</span>
+                </a>
+                <!-- NUEVO BOTÓN: DESCARGAR CV -->
+                <a href="https://drive.google.com/file/d/1zPAhoGCNj7cHVxNoF2MLWUudHTGEP_4-/view?usp=sharing" target="_blank" class="px-8 py-4 bg-slate-700 text-white font-bold rounded hover:bg-slate-600 transition-colors flex items-center justify-center gap-3 border border-slate-600">
+                    <i class="fas fa-file-pdf"></i> <span>Descargar CV Completo</span>
                 </a>
             </div>
             <div class="border-t border-gray-800 pt-10 text-sm text-gray-400">
