@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
@@ -30,7 +31,10 @@
                         teal: '#0d9488',    // Teal (Salud/Seguridad)
                         whatsapp: '#25D366', // Verde WhatsApp
                         ai: '#6366f1',       // Indigo para IA
-                        orange: '#f97316'    // Naranja para Ergonomía
+                        orange: '#f97316',   // Naranja para Ergonomía
+                        red: '#ef4444',      // Rojo Alerta
+                        purple: '#a855f7',   // Morado para Gestión Médica
+                        yellow: '#facc15'    // Amarillo para Normatividad
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -115,8 +119,8 @@
                 <div class="hidden md:flex space-x-4 lg:space-x-8 items-center">
                     <a href="#hero" class="text-gray-300 hover:text-white transition-colors text-sm font-medium tracking-wide" data-i18n="nav_home">Inicio</a>
                     <a href="#about" class="text-gray-300 hover:text-white transition-colors text-sm font-medium tracking-wide" data-i18n="nav_strategy">Estrategia</a>
-                    <!-- NUEVO LINK -->
-                    <a href="#legal-shield" class="text-red-300 hover:text-red-100 transition-colors text-sm font-bold tracking-wide flex items-center gap-1"><i class="fas fa-shield-halved text-xs"></i> Normatividad</a>
+                    <!-- BOTÓN NORMATIVIDAD OPTIMIZADO (AMARILLO ORO + BRILLO) -->
+                    <a href="#legal-shield" class="text-[#FFD700] hover:text-[#FFF59D] transition-colors text-sm font-bold tracking-wide flex items-center gap-1 filter drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]"><i class="fas fa-shield-halved text-xs"></i> Normatividad</a>
                     <a href="#bi" class="text-teal hover:text-white transition-colors text-sm font-bold tracking-wide" data-i18n="nav_bi">BI & Dashboard</a>
                     <a href="#ai-simulator" class="text-indigo-400 hover:text-indigo-300 transition-colors text-sm font-bold tracking-wide flex items-center gap-1"><i class="fas fa-robot"></i> <span data-i18n="nav_ai">AI Sim</span></a>
                     <a href="#trayectoria" class="text-gray-300 hover:text-white transition-colors text-sm font-medium tracking-wide" data-i18n="nav_career">Trayectoria</a>
@@ -143,7 +147,8 @@
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
                 <a href="#hero" class="block px-3 py-2 text-gray-300 hover:text-white font-medium" data-i18n="nav_home">Inicio</a>
                 <a href="#about" class="block px-3 py-2 text-gray-300 hover:text-white font-medium" data-i18n="nav_strategy">Estrategia</a>
-                <a href="#legal-shield" class="block px-3 py-2 text-red-300 hover:text-white font-medium"><i class="fas fa-shield-halved text-xs"></i> Normatividad</a>
+                <!-- VERSION MOVIL TAMBIÉN OPTIMIZADA -->
+                <a href="#legal-shield" class="block px-3 py-2 text-[#FFD700] hover:text-[#FFF59D] font-bold filter drop-shadow-md"><i class="fas fa-shield-halved text-xs"></i> Normatividad</a>
                 <a href="#bi" class="block px-3 py-2 text-teal font-bold" data-i18n="nav_bi">Data & BI</a>
                 <a href="#ai-simulator" class="block px-3 py-2 text-indigo-400 font-bold" data-i18n="nav_ai_full">AI Strategic Sim ✨</a>
                 <a href="#trayectoria" class="block px-3 py-2 text-gray-300 hover:text-white font-medium" data-i18n="nav_career">Trayectoria</a>
@@ -360,6 +365,15 @@
                             <i class="fas fa-chart-pie w-5"></i>
                             <span class="font-medium text-sm">Dashboard General</span>
                         </button>
+                        <button onclick="switchDashTab('nom030')" id="tab-nom030" class="dash-sidebar-btn w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-400 text-left">
+                            <i class="fas fa-helmet-safety w-5"></i>
+                            <span class="font-medium text-sm">Seguridad NOM-030</span>
+                        </button>
+                        <!-- NUEVO BOTÓN: GESTIÓN MÉDICA -->
+                        <button onclick="switchDashTab('medical')" id="tab-medical" class="dash-sidebar-btn w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-400 text-left">
+                            <i class="fas fa-user-doctor w-5"></i>
+                            <span class="font-medium text-sm">Gestión Médica</span>
+                        </button>
                         <button onclick="switchDashTab('nom035')" id="tab-nom035" class="dash-sidebar-btn w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-400 text-left">
                             <i class="fas fa-brain w-5"></i>
                             <span class="font-medium text-sm">Psicosocial NOM-035</span>
@@ -482,6 +496,232 @@
                         </div>
                     </div>
 
+                    <!-- VIEW: NOM-030 -->
+                    <div id="view-nom030" class="dash-view hidden animate-fade-in">
+                        <!-- ... (Contenido NOM-030 igual que antes) ... -->
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-5 mb-8">
+                            <!-- Avance PASST -->
+                            <div class="kpi-card bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Avance PASST</span>
+                                    <div class="w-8 h-8 rounded-lg bg-teal/10 flex items-center justify-center text-teal"><i class="fas fa-tasks"></i></div>
+                                </div>
+                                <h4 class="text-3xl font-heading font-bold text-navy mb-1">94%</h4>
+                                <span class="text-xs text-teal font-bold"><i class="fas fa-check-double mr-1"></i> Audit Ready (STPS)</span>
+                            </div>
+
+                            <!-- Semáforo Diagnóstico -->
+                            <div class="kpi-card bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Diagnóstico (30.1)</span>
+                                    <div class="w-8 h-8 rounded-lg bg-green-100 flex items-center justify-center text-green-600"><i class="fas fa-file-contract"></i></div>
+                                </div>
+                                <h4 class="text-xl font-heading font-bold text-green-600 mb-1 mt-1">VIGENTE</h4>
+                                <span class="text-xs text-gray-500">Act: Hace 3 meses</span>
+                            </div>
+
+                            <!-- Cierre Hallazgos -->
+                            <div class="kpi-card bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Cierre Hallazgos</span>
+                                    <div class="w-8 h-8 rounded-lg bg-orange-50 flex items-center justify-center text-orange-500"><i class="fas fa-screwdriver-wrench"></i></div>
+                                </div>
+                                <h4 class="text-3xl font-heading font-bold text-navy mb-1">85%</h4>
+                                <span class="text-xs text-orange-500 font-bold">12 Pendientes</span>
+                            </div>
+
+                            <!-- Comisión Mixta -->
+                            <div class="kpi-card bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Comisión Mixta</span>
+                                    <div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-blue-500"><i class="fas fa-users-viewfinder"></i></div>
+                                </div>
+                                <h4 class="text-xl font-heading font-bold text-navy mb-1 mt-1">ACTIVA</h4>
+                                <span class="text-xs text-gray-500">Última Acta: Feb 25</span>
+                            </div>
+                        </div>
+
+                        <!-- Gráfico Principal: Cumplimiento PASST -->
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 mb-8">
+                            <h5 class="font-bold text-navy mb-4 text-sm flex items-center">
+                                <i class="fas fa-clipboard-check text-teal mr-2"></i> Cumplimiento del Programa de Seguridad (PASST) vs Hallazgos
+                            </h5>
+                            <div class="h-72 w-full">
+                                <canvas id="nom030ComplianceChart"></canvas>
+                            </div>
+                        </div>
+
+                        <!-- Checklist y Capacitación -->
+                        <div class="grid lg:grid-cols-3 gap-6">
+                            <!-- Checklist Documental -->
+                            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                                <h5 class="font-bold text-navy mb-4 text-sm flex items-center">
+                                    <i class="fas fa-folder-open text-gray-500 mr-2"></i> Carpeta Legal (Digital)
+                                </h5>
+                                <ul class="space-y-3">
+                                    <li class="flex items-center justify-between text-sm">
+                                        <span class="text-gray-600"><i class="fas fa-check-circle text-green-500 mr-2"></i>Diagnóstico Integral</span>
+                                        <span class="text-[10px] bg-green-100 text-green-700 px-2 py-0.5 rounded">PDF</span>
+                                    </li>
+                                    <li class="flex items-center justify-between text-sm">
+                                        <span class="text-gray-600"><i class="fas fa-check-circle text-green-500 mr-2"></i>Programa (PASST)</span>
+                                        <span class="text-[10px] bg-green-100 text-green-700 px-2 py-0.5 rounded">PDF</span>
+                                    </li>
+                                    <li class="flex items-center justify-between text-sm">
+                                        <span class="text-gray-600"><i class="fas fa-check-circle text-green-500 mr-2"></i>Actas CSH (Trimestral)</span>
+                                        <span class="text-[10px] bg-green-100 text-green-700 px-2 py-0.5 rounded">4/4</span>
+                                    </li>
+                                    <li class="flex items-center justify-between text-sm">
+                                        <span class="text-gray-600"><i class="fas fa-exclamation-circle text-orange-500 mr-2"></i>Estudios de Medio Amb.</span>
+                                        <span class="text-[10px] bg-orange-100 text-orange-700 px-2 py-0.5 rounded">Pendiente Ruido</span>
+                                    </li>
+                                    <li class="flex items-center justify-between text-sm">
+                                        <span class="text-gray-600"><i class="fas fa-check-circle text-green-500 mr-2"></i>Dictámenes Eléctricos</span>
+                                        <span class="text-[10px] bg-green-100 text-green-700 px-2 py-0.5 rounded">UVIE</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Gráfico de Capacitación -->
+                            <div class="lg:col-span-2 bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                                <h5 class="font-bold text-navy mb-4 text-sm flex items-center">
+                                    <i class="fas fa-chalkboard-user text-indigo-500 mr-2"></i> Efectividad de Capacitación (NOM-030 4.1.3)
+                                </h5>
+                                <div class="h-56 w-full">
+                                    <canvas id="nom030TrainingChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- VIEW: GESTIÓN MÉDICA (ACTUALIZADA) -->
+                    <div id="view-medical" class="dash-view hidden animate-fade-in">
+                        
+                        <!-- Header de Sección: Auditoría de Servicio -->
+                        <div class="flex items-center justify-between mb-6">
+                            <div>
+                                <h4 class="text-xl font-heading font-bold text-navy">Gestión Médica Integral</h4>
+                                <p class="text-xs text-gray-500">Correlación Normativa y Control Operativo</p>
+                            </div>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-[10px] font-bold uppercase tracking-wider">
+                                Servicio Activo 24/7
+                            </span>
+                        </div>
+
+                        <!-- 1. BLOQUE DE CONSULTAS (PRODUCTIVIDAD) - NOM-004-SSA3 -->
+                        <div class="mb-8">
+                            <h5 class="font-bold text-gray-400 text-xs uppercase tracking-widest mb-4 border-b border-gray-200 pb-2">
+                                <i class="fas fa-stethoscope mr-2 text-blue-500"></i> Atención Médica & Expediente Clínico [NOM-004-SSA3]
+                            </h5>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <!-- KPI Consultas Totales -->
+                                <div class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm flex flex-col justify-between">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Consultas Mes</span>
+                                        <div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-blue-500"><i class="fas fa-user-doctor"></i></div>
+                                    </div>
+                                    <h4 class="text-3xl font-heading font-bold text-navy mb-1">342</h4>
+                                    <span class="text-xs text-gray-500">Promedio: 15/día</span>
+                                </div>
+
+                                <!-- Gráfico de Motivo de Consulta -->
+                                <div class="md:col-span-2 bg-white p-5 rounded-xl border border-gray-100 shadow-sm relative">
+                                    <h6 class="text-xs font-bold text-navy mb-3">Morbilidad Sentida (Top 5 Diagnósticos)</h6>
+                                    <div class="h-32 w-full">
+                                        <canvas id="medicalConsultationChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2. BLOQUE DE SINIESTRALIDAD DETALLADA (LSS / RT / AUSENTISMO) -->
+                        <div class="mb-8">
+                            <h5 class="font-bold text-gray-400 text-xs uppercase tracking-widest mb-4 border-b border-gray-200 pb-2">
+                                <i class="fas fa-crutch mr-2 text-red-500"></i> Siniestralidad & Ausentismo [LSS - Art. 474 LFT]
+                            </h5>
+                            
+                            <div class="grid lg:grid-cols-3 gap-6">
+                                <!-- Tabla de Control de Incapacidades -->
+                                <div class="lg:col-span-2 bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                                    <div class="flex justify-between items-center mb-6">
+                                        <h5 class="font-bold text-navy text-sm">Clasificación de Incapacidades</h5>
+                                        <span class="text-[10px] bg-red-50 text-red-600 px-2 py-1 rounded border border-red-100 font-bold">Riesgo Financiero</span>
+                                    </div>
+                                    <div class="h-64 w-full">
+                                        <canvas id="medicalDisabilityChart"></canvas> <!-- Stacked Bar: Interna vs EG vs RT -->
+                                    </div>
+                                    <div class="mt-4 flex gap-4 justify-center text-[10px] text-gray-500">
+                                        <span class="flex items-center"><span class="w-2 h-2 rounded-full bg-gray-400 mr-1"></span> Permiso Interno (Costo Empresa)</span>
+                                        <span class="flex items-center"><span class="w-2 h-2 rounded-full bg-orange-400 mr-1"></span> Enf. General (Subsidio IMSS)</span>
+                                        <span class="flex items-center"><span class="w-2 h-2 rounded-full bg-red-500 mr-1"></span> Riesgo Trabajo (Impacto Prima)</span>
+                                    </div>
+                                </div>
+
+                                <!-- KPIs de Impacto Financiero -->
+                                <div class="space-y-4">
+                                    <div class="kpi-card bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
+                                        <div class="flex justify-between items-start mb-2">
+                                            <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Días Perdidos Totales</span>
+                                            <div class="w-8 h-8 rounded-lg bg-orange-50 flex items-center justify-center text-orange-500"><i class="fas fa-calendar-minus"></i></div>
+                                        </div>
+                                        <h4 class="text-3xl font-heading font-bold text-navy mb-1">45</h4>
+                                        <span class="text-xs text-red-500 font-bold">↑ 12% vs Mes Anterior</span>
+                                    </div>
+
+                                    <div class="kpi-card bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
+                                        <div class="flex justify-between items-start mb-2">
+                                            <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Casos RT (ST-7)</span>
+                                            <div class="w-8 h-8 rounded-lg bg-red-50 flex items-center justify-center text-red-500"><i class="fas fa-file-medical-alt"></i></div>
+                                        </div>
+                                        <h4 class="text-3xl font-heading font-bold text-navy mb-1">1</h4>
+                                        <span class="text-xs text-gray-500">En Dictaminación</span>
+                                    </div>
+
+                                    <div class="kpi-card bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
+                                        <div class="flex justify-between items-start mb-2">
+                                            <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Costo Ausentismo Est.</span>
+                                            <div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-blue-500"><i class="fas fa-money-bill-wave"></i></div>
+                                        </div>
+                                        <h4 class="text-xl font-heading font-bold text-navy mb-1">$85k</h4>
+                                        <span class="text-xs text-gray-500">Nómina no devengada</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. VIGILANCIA DE LA SALUD (EXÁMENES) - NOM-030 -->
+                        <div class="mb-8">
+                            <h5 class="font-bold text-gray-400 text-xs uppercase tracking-widest mb-4 border-b border-gray-200 pb-2">
+                                <i class="fas fa-eye mr-2 text-teal"></i> Vigilancia de la Salud [NOM-030-STPS]
+                            </h5>
+                             <div class="grid lg:grid-cols-2 gap-6 mb-8">
+                                <!-- Gráfico de Aptitud (Doughnut) -->
+                                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                                    <h5 class="font-bold text-navy mb-4 text-sm flex items-center">
+                                        <i class="fas fa-file-medical text-blue-500 mr-2"></i> Dictamen Médico de Ingreso
+                                    </h5>
+                                    <div class="h-64 w-full flex items-center justify-center">
+                                        <canvas id="medicalAptitudeChart"></canvas>
+                                    </div>
+                                    <p class="text-xs text-gray-500 text-center mt-4">
+                                        *Apto con Restricción: Requiere adaptación ergonómica o visual.
+                                    </p>
+                                </div>
+
+                                <!-- Progreso Campaña Anual -->
+                                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                                    <h5 class="font-bold text-navy mb-4 text-sm flex items-center">
+                                        <i class="fas fa-business-time text-teal mr-2"></i> Avance Exámenes Periódicos (Campaña 2025)
+                                    </h5>
+                                    <div class="h-64 w-full">
+                                        <canvas id="medicalPeriodicProgressChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- VIEW: PSICOSOCIAL NOM-035 -->
                     <div id="view-nom035" class="dash-view hidden animate-fade-in">
                         <!-- ... (Contenido NOM-035 igual que antes) ... -->
@@ -518,10 +758,10 @@
                         </div>
                     </div>
 
-                    <!-- VIEW: ERGONOMÍA NOM-036 (ACTUALIZADO CON SIMULADOR) -->
+                    <!-- VIEW: ERGONOMÍA NOM-036 (ADMINISTRATIVO / ROSA) -->
                     <div id="view-riesgos" class="dash-view hidden animate-fade-in">
                         
-                        <!-- Top KPIs (NOM-036) -->
+                        <!-- Top KPIs (NOM-036 / OFICINAS) -->
                         <div class="grid grid-cols-1 md:grid-cols-4 gap-5 mb-8">
                             <div class="kpi-card bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
                                 <div class="flex justify-between items-start mb-2">
@@ -533,27 +773,27 @@
                             </div>
                             <div class="kpi-card bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
                                 <div class="flex justify-between items-start mb-2">
-                                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Ahorro TME</span>
-                                    <div class="w-8 h-8 rounded-lg bg-green-50 flex items-center justify-center text-green-600"><i class="fas fa-sack-dollar"></i></div>
+                                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Nivel ROSA Promedio</span>
+                                    <div class="w-8 h-8 rounded-lg bg-green-50 flex items-center justify-center text-green-600"><i class="fas fa-chair"></i></div>
                                 </div>
-                                <h4 class="text-3xl font-heading font-bold text-navy mb-1">$550k</h4>
-                                <span class="text-xs text-green-600 font-bold">-3 Incapacidades</span>
+                                <h4 class="text-3xl font-heading font-bold text-navy mb-1">3.2</h4>
+                                <span class="text-xs text-green-600 font-bold">Riesgo Bajo</span>
                             </div>
                             <div class="kpi-card bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
                                 <div class="flex justify-between items-start mb-2">
-                                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Personal Expuesto</span>
-                                    <div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-blue-500"><i class="fas fa-users"></i></div>
+                                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Usuarios PVD</span>
+                                    <div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-blue-500"><i class="fas fa-laptop-medical"></i></div>
                                 </div>
-                                <h4 class="text-3xl font-heading font-bold text-navy mb-1">45</h4>
-                                <span class="text-xs text-gray-500">15% de Plantilla</span>
+                                <h4 class="text-3xl font-heading font-bold text-navy mb-1">210</h4>
+                                <span class="text-xs text-gray-500">85% Plantilla</span>
                             </div>
                             <div class="kpi-card bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
                                 <div class="flex justify-between items-start mb-2">
-                                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Riesgo Fatiga</span>
+                                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Puestos Críticos ROSA</span>
                                     <div class="w-8 h-8 rounded-lg bg-red-50 flex items-center justify-center text-red-500"><i class="fas fa-triangle-exclamation"></i></div>
                                 </div>
-                                <h4 class="text-xl font-heading font-bold text-red-500 mb-1 mt-1">ALTO</h4>
-                                <span class="text-xs text-gray-500">Almacén Turno C</span>
+                                <h4 class="text-xl font-heading font-bold text-red-500 mb-1 mt-1">12</h4>
+                                <span class="text-xs text-gray-500">Call Center</span>
                             </div>
                         </div>
 
@@ -563,7 +803,7 @@
                             <!-- Financial Chart -->
                             <div class="lg:col-span-2 bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                                 <h5 class="font-bold text-navy mb-4 text-sm flex items-center">
-                                    <i class="fas fa-chart-line text-blue-600 mr-2"></i> Costo de Lesiones vs Inversión
+                                    <i class="fas fa-chart-line text-blue-600 mr-2"></i> Inversión en Mobiliario vs Quejas Ergonómicas
                                 </h5>
                                 <div class="h-64 w-full">
                                     <canvas id="ergoFinanceChart"></canvas>
@@ -573,7 +813,7 @@
                             <!-- Radar Risk -->
                             <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                                 <h5 class="font-bold text-navy mb-4 text-sm flex items-center">
-                                    <i class="fas fa-scale-balanced text-purple-600 mr-2"></i> Factores de Riesgo
+                                    <i class="fas fa-scale-balanced text-purple-600 mr-2"></i> Factores de Riesgo (ROSA)
                                 </h5>
                                 <div class="h-64 w-full flex items-center justify-center">
                                     <canvas id="ergoRadarChart"></canvas>
@@ -581,44 +821,44 @@
                             </div>
                         </div>
 
-                        <!-- SIMULATOR NOM-036 SECTION -->
+                        <!-- SIMULATOR ROSA SECTION -->
                         <div class="grid lg:grid-cols-3 gap-6 animate-fade-in">
                             <!-- Simulator Panel -->
                             <div class="bg-navy text-white p-6 rounded-xl shadow-xl relative overflow-hidden flex flex-col">
-                                <div class="absolute top-0 right-0 w-32 h-32 bg-orange-500 rounded-full blur-3xl opacity-20 -mr-10 -mt-10"></div>
+                                <div class="absolute top-0 right-0 w-32 h-32 bg-purple-500 rounded-full blur-3xl opacity-20 -mr-10 -mt-10"></div>
                                 <div class="relative z-10">
                                     <h3 class="font-bold text-lg mb-1 flex items-center gap-2 text-white">
-                                        <i class="fas fa-bolt text-yellow-400"></i> Simulador NOM-036
+                                        <i class="fas fa-chair text-purple-400"></i> Simulación Ergo-Office
                                     </h3>
-                                    <p class="text-gray-400 text-xs mb-6">Estimación rápida de nivel de riesgo por carga manual.</p>
+                                    <p class="text-gray-400 text-xs mb-6">Método: ROSA (Rapid Office Strain Assessment)</p>
                                     
                                     <div class="space-y-6 mb-8">
                                         <!-- Slider 1 -->
                                         <div>
                                             <div class="flex justify-between mb-2 text-sm">
-                                                <span class="text-gray-300">Peso de Carga (Kg)</span>
-                                                <span class="font-bold text-blue-400" id="sim-weight-val">20 kg</span>
+                                                <span class="text-gray-300">Ajuste Silla/Monitor (1-10)</span>
+                                                <span class="font-bold text-purple-400" id="sim-weight-val">5 pts</span>
                                             </div>
-                                            <input type="range" min="5" max="50" value="20" id="sim-weight" class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer">
+                                            <input type="range" min="1" max="10" value="5" id="sim-weight" class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer">
                                         </div>
                                         <!-- Slider 2 -->
                                         <div>
                                             <div class="flex justify-between mb-2 text-sm">
-                                                <span class="text-gray-300">Frecuencia (Lev/Hr)</span>
-                                                <span class="font-bold text-blue-400" id="sim-freq-val">60 lev</span>
+                                                <span class="text-gray-300">Horas Continuas PVD</span>
+                                                <span class="font-bold text-purple-400" id="sim-freq-val">4 hrs</span>
                                             </div>
-                                            <input type="range" min="10" max="300" value="60" id="sim-freq" class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer">
+                                            <input type="range" min="1" max="12" value="4" id="sim-freq" class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer">
                                         </div>
                                     </div>
 
                                     <div class="mt-auto pt-6 border-t border-gray-700 grid grid-cols-2 gap-4">
                                         <div>
-                                            <span class="block text-[10px] text-gray-400 uppercase tracking-widest">Nivel Riesgo</span>
-                                            <span class="text-xl font-bold text-orange-400" id="sim-risk-text">ALTO (14.0)</span>
+                                            <span class="block text-[10px] text-gray-400 uppercase tracking-widest">Nivel Riesgo ROSA</span>
+                                            <span class="text-xl font-bold text-orange-400" id="sim-risk-text">MEDIO (4.0)</span>
                                         </div>
                                         <div>
-                                            <span class="block text-[10px] text-gray-400 uppercase tracking-widest">Pasivo Est.</span>
-                                            <span class="text-xl font-bold text-blue-400" id="sim-cost-text">$168k</span>
+                                            <span class="block text-[10px] text-gray-400 uppercase tracking-widest">Acción</span>
+                                            <span class="text-sm font-bold text-white mt-1" id="sim-cost-text">Evaluar Ajustes</span>
                                         </div>
                                     </div>
                                 </div>
@@ -627,7 +867,7 @@
                             <!-- Risk by Dept Chart -->
                             <div class="lg:col-span-2 bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                                 <h5 class="font-bold text-navy mb-4 text-sm flex items-center">
-                                    <i class="fas fa-layer-group text-gray-600 mr-2"></i> Riesgo Ergonómico por Departamento
+                                    <i class="fas fa-layer-group text-gray-600 mr-2"></i> Riesgo Ergonómico (Puntos Críticos)
                                 </h5>
                                 <div class="h-60 w-full">
                                     <canvas id="ergoDeptRiskChart"></canvas>
@@ -637,34 +877,128 @@
 
                     </div>
 
-                    <!-- VIEW: WELLNESS & ROI -->
+                    <!-- VIEW: WELLNESS & ROI (ACTUALIZADA INTEGRALMENTE) -->
                     <div id="view-wellness" class="dash-view hidden animate-fade-in">
-                         <!-- ... (Contenido Wellness igual que antes) ... -->
+                        
+                        <!-- Header Wellness -->
+                        <div class="flex items-center justify-between mb-6">
+                            <div>
+                                <h4 class="text-xl font-heading font-bold text-navy">Gestión Integral de Bienestar</h4>
+                                <p class="text-xs text-gray-500">Programa de Salud, Mitigación de Hallazgos & ROI</p>
+                            </div>
+                            <span class="px-3 py-1 bg-teal/10 text-teal rounded-full text-[10px] font-bold uppercase tracking-wider">
+                                Estrategia Activa 2025
+                            </span>
+                        </div>
+
+                        <!-- 1. KPIs DE IMPACTO ESTRATÉGICO -->
                         <div class="grid grid-cols-1 md:grid-cols-4 gap-5 mb-8">
                              <div class="kpi-card bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
-                                <h4 class="text-3xl font-heading font-bold text-navy mb-1">8.4/10</h4>
-                                <span class="text-xs text-green-600 font-bold">Índice Salud</span>
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Riesgo Poblacional</span>
+                                    <div class="w-8 h-8 rounded-lg bg-orange-50 flex items-center justify-center text-orange-500"><i class="fas fa-heart-crack"></i></div>
+                                </div>
+                                <h4 class="text-3xl font-heading font-bold text-navy mb-1">18%</h4>
+                                <span class="text-xs text-green-600 font-bold">↓ 4% vs Año Anterior</span>
                             </div>
                             <div class="kpi-card bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
-                                <h4 class="text-3xl font-heading font-bold text-navy mb-1">100%</h4>
-                                <span class="text-xs text-teal font-bold">Cumplimiento 035</span>
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Adherencia Programa</span>
+                                    <div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-blue-500"><i class="fas fa-people-group"></i></div>
+                                </div>
+                                <h4 class="text-3xl font-heading font-bold text-navy mb-1">72%</h4>
+                                <span class="text-xs text-blue-500 font-bold">Participación Activa</span>
                             </div>
                              <div class="kpi-card bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
-                                <h4 class="text-3xl font-heading font-bold text-navy mb-1">18%</h4>
-                                <span class="text-xs text-orange-500 font-bold">Crónicos</span>
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Retención Talento</span>
+                                    <div class="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center text-indigo-500"><i class="fas fa-handshake"></i></div>
+                                </div>
+                                <h4 class="text-3xl font-heading font-bold text-navy mb-1">95%</h4>
+                                <span class="text-xs text-gray-500 font-bold">En participantes Wellness</span>
                             </div>
                              <div class="kpi-card bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">ROI Proyectado</span>
+                                    <div class="w-8 h-8 rounded-lg bg-green-50 flex items-center justify-center text-green-600"><i class="fas fa-sack-dollar"></i></div>
+                                </div>
                                 <h4 class="text-3xl font-heading font-bold text-navy mb-1">$1.2M</h4>
-                                <span class="text-xs text-green-600 font-bold">ROI Wellness</span>
+                                <span class="text-xs text-green-600 font-bold">Ratio 1:3.5</span>
                             </div>
                         </div>
+
+                        <!-- 2. MATRIZ DE CONTROL Y MITIGACIÓN DE HALLAZGOS -->
+                        <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm mb-8">
+                            <h5 class="font-bold text-navy mb-4 text-sm flex items-center">
+                                <i class="fas fa-list-check text-teal mr-2"></i> Programa de Mitigación de Hallazgos (Control Operativo)
+                            </h5>
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-sm text-left text-gray-500">
+                                    <thead class="text-xs text-gray-700 uppercase bg-slate-50">
+                                        <tr>
+                                            <th scope="col" class="px-6 py-3">Hallazgo Detectado</th>
+                                            <th scope="col" class="px-6 py-3">Medio de Control (Programa)</th>
+                                            <th scope="col" class="px-6 py-3">Responsable</th>
+                                            <th scope="col" class="px-6 py-3">Avance Implementación</th>
+                                            <th scope="col" class="px-6 py-3">Estatus</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="bg-white border-b hover:bg-slate-50">
+                                            <td class="px-6 py-4 font-medium text-navy">
+                                                <i class="fas fa-circle text-red-500 text-[8px] mr-2"></i>Riesgo Metabólico Alto (Obesidad)
+                                            </td>
+                                            <td class="px-6 py-4">Reto "Pierde Kilos, Gana Vida" + Nutriólogo</td>
+                                            <td class="px-6 py-4">Servicio Médico</td>
+                                            <td class="px-6 py-4">
+                                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                                    <div class="bg-teal h-2.5 rounded-full" style="width: 70%"></div>
+                                                </div>
+                                                <span class="text-xs text-gray-500 mt-1 block">70% (Fase Seguimiento)</span>
+                                            </td>
+                                            <td class="px-6 py-4"><span class="bg-green-100 text-green-800 text-xs font-bold px-2.5 py-0.5 rounded">En Curso</span></td>
+                                        </tr>
+                                        <tr class="bg-white border-b hover:bg-slate-50">
+                                            <td class="px-6 py-4 font-medium text-navy">
+                                                <i class="fas fa-circle text-orange-500 text-[8px] mr-2"></i>Estrés Laboral (Burnout)
+                                            </td>
+                                            <td class="px-6 py-4">Talleres Mindfulness & Política Desconexión</td>
+                                            <td class="px-6 py-4">RH / Desarrollo</td>
+                                            <td class="px-6 py-4">
+                                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                                    <div class="bg-indigo-500 h-2.5 rounded-full" style="width: 45%"></div>
+                                                </div>
+                                                <span class="text-xs text-gray-500 mt-1 block">45% (Fase Inicial)</span>
+                                            </td>
+                                            <td class="px-6 py-4"><span class="bg-yellow-100 text-yellow-800 text-xs font-bold px-2.5 py-0.5 rounded">En Proceso</span></td>
+                                        </tr>
+                                        <tr class="bg-white border-b hover:bg-slate-50">
+                                            <td class="px-6 py-4 font-medium text-navy">
+                                                <i class="fas fa-circle text-blue-500 text-[8px] mr-2"></i>Sedentarismo / Ergo
+                                            </td>
+                                            <td class="px-6 py-4">Software Pausas Activas + Torneo Pasos</td>
+                                            <td class="px-6 py-4">Comité Wellness</td>
+                                            <td class="px-6 py-4">
+                                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                                    <div class="bg-blue-500 h-2.5 rounded-full" style="width: 90%"></div>
+                                                </div>
+                                                <span class="text-xs text-gray-500 mt-1 block">90% (Consolidación)</span>
+                                            </td>
+                                            <td class="px-6 py-4"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2.5 py-0.5 rounded">Cumplido</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- 3. GRÁFICOS DE APOYO (LÍNEA BASE) -->
                         <div class="grid lg:grid-cols-2 gap-6 mb-8">
                             <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                                <h5 class="font-bold text-navy mb-4 text-sm">Distribución IMC</h5>
+                                <h5 class="font-bold text-navy mb-4 text-sm">Distribución IMC (Línea Base)</h5>
                                 <div class="h-64 w-full flex items-center justify-center"><canvas id="wellnessBMIChart"></canvas></div>
                             </div>
                             <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                                <h5 class="font-bold text-navy mb-4 text-sm">Top Patologías</h5>
+                                <h5 class="font-bold text-navy mb-4 text-sm">Prevalencia de Patologías Crónicas</h5>
                                 <div class="h-64 w-full"><canvas id="wellnessChronicChart"></canvas></div>
                             </div>
                         </div>
@@ -783,6 +1117,12 @@
         let wellnessBMIChartInstance, wellnessChronicChartInstance;
         // New NOM-036 Instances
         let ergoFinanceChartInstance, ergoRadarChartInstance, ergoDeptRiskChartInstance;
+        // New NOM-030 Instances
+        let nom030ComplianceChartInstance, nom030TrainingChartInstance;
+        // New MEDICAL EXAM Instances
+        let medicalAptitudeChartInstance, medicalPeriodicProgressChartInstance, medicalFindingsChartInstance;
+        // NEW: Consultas & Siniestralidad
+        let medicalConsultationChartInstance, medicalDisabilityChartInstance;
 
         function initDashboard() {
             // 1. GENERAL CHARTS
@@ -828,16 +1168,16 @@
                 options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } } }
             });
 
-             // 3. NOM-036 CHARTS (NUEVOS)
+             // 3. NOM-036 CHARTS (NUEVOS - ADMINISTRATIVO - ROSA)
             ergoFinanceChartInstance = new Chart(document.getElementById('ergoFinanceChart'), {
                 type: 'bar',
                 data: {
                     labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun'],
                     datasets: [{
-                        label: 'Costo Lesiones ($)', data: [45000, 48000, 52000, 55000, 60000, 68000],
+                        label: 'Quejas Ergo (Dolor)', data: [12, 10, 8, 5, 4, 2],
                         backgroundColor: '#ef4444', borderRadius: 4, order: 2
                     }, {
-                        type: 'line', label: 'Inversión Ergo ($)', data: [15000, 15000, 20000, 20000, 25000, 25000],
+                        type: 'line', label: 'Inversión Sillas/PVD ($)', data: [5000, 8000, 12000, 15000, 15000, 10000],
                         borderColor: '#22c55e', borderWidth: 2, fill: false, tension: 0.3, order: 1
                     }]
                 },
@@ -847,31 +1187,177 @@
             ergoRadarChartInstance = new Chart(document.getElementById('ergoRadarChart'), {
                 type: 'radar',
                 data: {
-                    labels: ['Peso', 'Postura', 'Frecuencia', 'Duración', 'Distancia', 'Agarre'],
+                    labels: ['Silla (Altura)', 'Silla (Prof.)', 'Monitor', 'Teléfono', 'Mouse', 'Duración'],
                     datasets: [{
-                        label: 'Límite NOM-036', data: [100, 120, 110, 130, 100, 130],
+                        label: 'Nivel Ideal', data: [2, 2, 2, 2, 2, 2],
                         borderColor: '#94a3b8', borderDash: [5, 5], fill: false, pointRadius: 0
                     }, {
-                        label: 'Actual', data: [130, 90, 140, 80, 70, 110],
-                        backgroundColor: 'rgba(59, 130, 246, 0.2)', borderColor: '#3b82f6', pointBackgroundColor: '#3b82f6'
+                        label: 'Evaluación Actual', data: [3, 4, 5, 2, 3, 5],
+                        backgroundColor: 'rgba(168, 85, 247, 0.2)', borderColor: '#a855f7', pointBackgroundColor: '#a855f7' // Purple for ROSA
                     }]
                 },
-                options: { responsive: true, maintainAspectRatio: false, scales: { r: { suggestedMin: 0, suggestedMax: 150, ticks: { display: false } } } }
+                options: { responsive: true, maintainAspectRatio: false, scales: { r: { suggestedMin: 0, suggestedMax: 6, ticks: { display: false } } } }
             });
 
             ergoDeptRiskChartInstance = new Chart(document.getElementById('ergoDeptRiskChart'), {
                 type: 'bar',
                 data: {
-                    labels: ['Almacén', 'Ensamble', 'Embarques', 'Admin'],
+                    labels: ['Call Center', 'Finanzas', 'Recepción', 'TI'],
                     datasets: [{
-                        label: 'Nivel Riesgo', data: [92, 75, 45, 10],
+                        label: 'Puntuación ROSA Promedio', data: [7, 5, 4, 3],
                         backgroundColor: ['#ef4444', '#f97316', '#eab308', '#22c55e'], borderRadius: 4
                     }]
                 },
-                options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { max: 100, grid: { display: false } }, y: { grid: { display: false } } } }
+                options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { max: 10, grid: { display: false } }, y: { grid: { display: false } } } }
             });
 
-            // 4. WELLNESS CHARTS
+            // 4. NOM-030 CHARTS
+            nom030ComplianceChartInstance = new Chart(document.getElementById('nom030ComplianceChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun'],
+                    datasets: [
+                        {
+                            label: 'Actividades PASST Programadas',
+                            data: [10, 12, 10, 15, 12, 10],
+                            backgroundColor: '#cbd5e1', // Slate 300
+                            order: 2
+                        },
+                        {
+                            label: 'Actividades Ejecutadas (Real)',
+                            data: [10, 11, 10, 14, 12, 9],
+                            backgroundColor: '#0d9488', // Teal
+                            order: 1
+                        },
+                        {
+                            type: 'line',
+                            label: '% Cierre Hallazgos',
+                            data: [95, 90, 100, 85, 98, 92],
+                            borderColor: '#f97316', // Orange
+                            borderWidth: 2,
+                            tension: 0.3,
+                            yAxisID: 'y1',
+                            order: 0
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: { mode: 'index', intersect: false },
+                    scales: {
+                        y: { beginAtZero: true, grid: { display: false } },
+                        y1: { 
+                            type: 'linear', display: true, position: 'right', min: 0, max: 120, 
+                            grid: { drawOnChartArea: false },
+                            ticks: { callback: function(value){return value + '%'} } 
+                        },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+
+            nom030TrainingChartInstance = new Chart(document.getElementById('nom030TrainingChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Operativo', 'Mantenimiento', 'Administrativo', 'Supervisores'],
+                    datasets: [{
+                        label: '% Personal Capacitado',
+                        data: [95, 80, 60, 100],
+                        backgroundColor: ['#0ea5e9', '#facc15', '#94a3b8', '#22c55e'],
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: { y: { max: 100 }, x: { grid: { display: false } } }
+                }
+            });
+
+            // 5. MEDICAL EXAMS CHARTS (ADMINISTRATIVE & OPERATIONAL MIX)
+            medicalAptitudeChartInstance = new Chart(document.getElementById('medicalAptitudeChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Apto', 'Apto c/ Restricción (Lentes/Ergo)', 'No Apto', 'Pendiente Dictamen'],
+                    datasets: [{
+                        data: [65, 25, 5, 5],
+                        backgroundColor: ['#22c55e', '#facc15', '#ef4444', '#cbd5e1'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false, cutout: '65%',
+                    plugins: { legend: { position: 'right', labels: { boxWidth: 12, font: { size: 10 } } } }
+                }
+            });
+
+            medicalPeriodicProgressChartInstance = new Chart(document.getElementById('medicalPeriodicProgressChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun'],
+                    datasets: [{
+                        label: 'Exámenes Realizados',
+                        data: [5, 12, 45, 80, 110, 150],
+                        backgroundColor: '#a855f7', // Purple
+                        borderRadius: 4
+                    }, {
+                        type: 'line', label: 'Meta Acumulada',
+                        data: [10, 30, 60, 100, 140, 180],
+                        borderColor: '#0f172a', // Navy
+                        borderWidth: 2, tension: 0.1
+                    }]
+                },
+                options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true }, x: { grid: { display: false } } } }
+            });
+
+            // NUEVO: GRÁFICO DE CONSULTAS (Productividad)
+            medicalConsultationChartInstance = new Chart(document.getElementById('medicalConsultationChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Respiratorio', 'Osteomuscular', 'Gastro', 'Check-up', 'Cefaleas'],
+                    datasets: [{
+                        label: 'Total Consultas',
+                        data: [120, 85, 60, 45, 32],
+                        backgroundColor: ['#6366f1', '#f97316', '#0ea5e9', '#22c55e', '#cbd5e1'],
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+                    plugins: { legend: { display: false } }, scales: { x: { display: false }, y: { grid: { display: false } } }
+                }
+            });
+
+            // NUEVO: GRÁFICO DE INCAPACIDADES (Siniestralidad Detallada)
+            medicalDisabilityChartInstance = new Chart(document.getElementById('medicalDisabilityChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun'],
+                    datasets: [
+                        {
+                            label: 'Permiso Interno (Costo)', data: [5, 8, 4, 6, 5, 3],
+                            backgroundColor: '#9ca3af', stack: 'Stack 0' // Gray
+                        },
+                        {
+                            label: 'Enf. General (IMSS)', data: [12, 10, 15, 8, 11, 9],
+                            backgroundColor: '#fb923c', stack: 'Stack 0' // Orange
+                        },
+                        {
+                            label: 'Riesgo Trabajo (ST-7)', data: [0, 1, 0, 0, 0, 1],
+                            backgroundColor: '#ef4444', stack: 'Stack 0' // Red
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: { x: { grid: { display: false } }, y: { beginAtZero: true, stacked: true } }
+                }
+            });
+
+
+            // 6. WELLNESS CHARTS
             wellnessBMIChartInstance = new Chart(document.getElementById('wellnessBMIChart'), {
                 type: 'doughnut',
                 data: { labels: ['Normal', 'Sobrepeso', 'Obesidad G1', 'Obesidad G2'], datasets: [{ data: [45, 30, 15, 10], backgroundColor: ['#0d9488', '#facc15', '#f97316', '#ef4444'], borderWidth: 0 }] },
@@ -887,31 +1373,48 @@
             initSimulator();
         }
 
-        // --- SIMULATOR LOGIC (NOM-036) ---
+        // --- SIMULATOR LOGIC (ROSA) ---
         function initSimulator() {
-            const weightInput = document.getElementById('sim-weight');
-            const freqInput = document.getElementById('sim-freq');
+            const chairInput = document.getElementById('sim-weight'); // Re-used ID for layout, logic changed
+            const timeInput = document.getElementById('sim-freq');    // Re-used ID for layout, logic changed
             
+            if(!chairInput || !timeInput) return; // Guard clause
+
             function updateSimulation() {
-                const w = parseInt(weightInput.value);
-                const f = parseInt(freqInput.value);
+                const chairScore = parseInt(chairInput.value); // 1-10 (Where 1 is good, 10 is bad setup)
+                const timeScore = parseInt(timeInput.value);   // 1-12 hours
+
+                document.getElementById('sim-weight-val').innerText = `${chairScore} pts (Desajuste)`;
+                document.getElementById('sim-freq-val').innerText = `${timeScore} hrs`;
+
+                // Fórmula simulada ROSA (Simplificada para demo)
+                // ROSA Score usually 1-10.
+                // Base score + Duration factor
+                let rosaScore = (chairScore * 0.6) + (timeScore > 4 ? (timeScore - 4) * 0.5 : 0) + 2; 
+                if(rosaScore > 10) rosaScore = 10;
                 
-                document.getElementById('sim-weight-val').innerText = `${w} kg`;
-                document.getElementById('sim-freq-val').innerText = `${f} lev`;
-
-                // Fórmula simplificada de riesgo
-                const risk = (w * 0.4) + (f * 0.1);
-                const cost = Math.floor(risk * 12000);
-
                 const riskText = document.getElementById('sim-risk-text');
-                riskText.innerText = `${risk > 20 ? 'MUY ALTO' : risk > 10 ? 'ALTO' : 'BAJO'} (${risk.toFixed(1)})`;
-                riskText.className = `text-xl font-bold ${risk > 20 ? 'text-red-400' : risk > 10 ? 'text-yellow-400' : 'text-green-400'}`;
+                const costText = document.getElementById('sim-cost-text');
                 
-                document.getElementById('sim-cost-text').innerText = `$${(cost/1000).toFixed(0)}k`;
+                const scoreDisplay = rosaScore.toFixed(1);
+                
+                if (rosaScore < 3) {
+                    riskText.innerText = `BAJO (${scoreDisplay})`;
+                    riskText.className = "text-xl font-bold text-green-400";
+                    costText.innerText = "Monitorizar";
+                } else if (rosaScore < 5) {
+                    riskText.innerText = `MEDIO (${scoreDisplay})`;
+                    riskText.className = "text-xl font-bold text-yellow-400";
+                    costText.innerText = "Evaluar Ajustes";
+                } else {
+                    riskText.innerText = `ALTO (${scoreDisplay})`;
+                    riskText.className = "text-xl font-bold text-red-400";
+                    costText.innerText = "Intervención Inmediata";
+                }
             }
 
-            weightInput.addEventListener('input', updateSimulation);
-            freqInput.addEventListener('input', updateSimulation);
+            chairInput.addEventListener('input', updateSimulation);
+            timeInput.addEventListener('input', updateSimulation);
             updateSimulation(); // Init run
         }
 
