@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
@@ -61,6 +61,13 @@
         .font-signature { font-family: 'Dancing Script', cursive; }
         .gradient-text { background: linear-gradient(to right, #0ea5e9, #0d9488); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         
+        /* REGLA GLOBAL PARA EVITAR SILABEO EN TEXTO JUSTIFICADO */
+        .text-justify {
+            hyphens: none !important;
+            -webkit-hyphens: none !important;
+            -ms-hyphens: none !important;
+        }
+
         .dash-sidebar-btn { transition: all 0.3s ease; }
         .dash-sidebar-btn.active { background-color: rgba(255, 255, 255, 0.1); border-left: 4px solid #0d9488; color: white; }
         .dash-sidebar-btn:hover:not(.active) { background-color: rgba(255, 255, 255, 0.05); }
@@ -154,7 +161,8 @@
                         Strategic Health, <br>
                         <span class="gradient-text">Wellness & Regulatory</span> Leader.
                     </h1>
-                    <h2 class="text-base lg:text-lg text-gray-400 mb-8 font-light leading-relaxed max-w-2xl mx-auto lg:mx-0 text-justify hyphens-auto lg:text-left" data-i18n="hero_desc">
+                    <!-- UPDATED: Added hyphens-none class -->
+                    <h2 class="text-base lg:text-lg text-gray-400 mb-8 font-light leading-relaxed max-w-2xl mx-auto lg:mx-0 text-justify lg:text-left hyphens-none" data-i18n="hero_desc">
                         Soy el <strong class="text-white">Dr. Han</strong>. Lidero la transformación de la salud corporativa, alineando el cumplimiento normativo estricto con estrategias de bienestar que impulsan la rentabilidad y blindan la operación.
                     </h2>
                     <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
@@ -182,23 +190,27 @@
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <h2 class="text-3xl lg:text-4xl font-heading font-bold text-navy mb-4" data-i18n="about_title">Ingeniería de Salud Operativa y <span class="text-teal">Mejora Continua.</span></h2>
                 <div class="w-24 h-1 bg-sky mx-auto rounded mb-6"></div>
-                <p class="text-lg text-gray-600 leading-relaxed text-justify hyphens-auto px-4 lg:px-0" data-i18n="about_desc">Integro principios de medicina laboral con metodologías de ingeniería (Lean Six Sigma, Análisis de Causa Raíz) para transformar la salud en un KPI medible. Mi enfoque no es solo clínico, es estructural: optimizo procesos para garantizar continuidad operativa y cumplimiento ISO/STPS.</p>
+                <!-- UPDATED: Added hyphens-none class -->
+                <p class="text-lg text-gray-600 leading-relaxed text-justify px-4 lg:px-0 hyphens-none" data-i18n="about_desc">Integro principios de medicina laboral con metodologías de ingeniería (Lean Six Sigma, Análisis de Causa Raíz) para transformar la salud en un KPI medible. Mi enfoque no es solo clínico, es estructural: optimizo procesos para garantizar continuidad operativa y cumplimiento ISO/STPS.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="p-8 rounded-xl bg-slate border border-gray-100 hover:shadow-xl transition-shadow group">
                     <div class="w-14 h-14 bg-navy rounded-lg flex items-center justify-center mb-6 group-hover:bg-sky transition-colors"><i class="fas fa-clipboard-check text-white text-2xl"></i></div>
                     <h3 class="text-xl font-heading font-bold text-navy mb-3" data-i18n="card1_title">Auditoría & Estándares</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed text-justify" data-i18n="card1_desc">Competencias probadas en ISO 9001, 19011 y 45001. Gestión basada en evidencia para "Zero Fines" en inspecciones STPS.</p>
+                    <!-- UPDATED: Added hyphens-none class -->
+                    <p class="text-gray-600 text-sm leading-relaxed text-justify hyphens-none" data-i18n="card1_desc">Competencias probadas en ISO 9001, 19011 y 45001. Gestión basada en evidencia para "Zero Fines" en inspecciones STPS.</p>
                 </div>
                 <div class="p-8 rounded-xl bg-slate border border-gray-100 hover:shadow-xl transition-shadow group">
                     <div class="w-14 h-14 bg-navy rounded-lg flex items-center justify-center mb-6 group-hover:bg-teal transition-colors"><i class="fas fa-chart-line text-white text-2xl"></i></div>
                     <h3 class="text-xl font-heading font-bold text-navy mb-3" data-i18n="card2_title">ROI & Siniestralidad</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed text-justify" data-i18n="card2_desc">Control agresivo de formatos ST-7/ST-9 ante el IMSS. Reducción directa de la Prima de Riesgo mediante análisis de datos y prevención técnica.</p>
+                    <!-- UPDATED: Added hyphens-none class -->
+                    <p class="text-gray-600 text-sm leading-relaxed text-justify hyphens-none" data-i18n="card2_desc">Control agresivo de formatos ST-7/ST-9 ante el IMSS. Reducción directa de la Prima de Riesgo mediante análisis de datos y prevención técnica.</p>
                 </div>
                 <div class="p-8 rounded-xl bg-slate border border-gray-100 hover:shadow-xl transition-shadow group">
                     <div class="w-14 h-14 bg-navy rounded-lg flex items-center justify-center mb-6 group-hover:bg-sky transition-colors"><i class="fas fa-hard-hat text-white text-2xl"></i></div>
                     <h3 class="text-xl font-heading font-bold text-navy mb-3" data-i18n="card3_title">Seguridad Operativa</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed text-justify" data-i18n="card3_desc">Gestión de riesgos en entornos de alta demanda (Aviación, Logística). Protocolos de fatiga y aptitud psicofísica para personal crítico.</p>
+                    <!-- UPDATED: Added hyphens-none class -->
+                    <p class="text-gray-600 text-sm leading-relaxed text-justify hyphens-none" data-i18n="card3_desc">Gestión de riesgos en entornos de alta demanda (Aviación, Logística). Protocolos de fatiga y aptitud psicofísica para personal crítico.</p>
                 </div>
             </div>
         </div>
@@ -753,6 +765,22 @@
                                 <span class="text-xs text-gray-500" data-i18n="career_edu_5_desc">Gestión de Dashboards y Análisis de Datos</span>
                             </div>
                         </li>
+                        <!-- NUEVO CURSO 1: HIGIENE -->
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-utensils text-indigo-500 mt-1"></i>
+                            <div>
+                                <strong class="block text-navy text-sm" data-i18n="career_edu_6_title">Buenas Prácticas de Higiene (NOM-251)</strong>
+                                <span class="text-xs text-gray-500" data-i18n="career_edu_6_desc">Preparación de Alimentos (NOM-251-SSA1-2009)</span>
+                            </div>
+                        </li>
+                        <!-- NUEVO CURSO 2: LACTARIOS -->
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-baby text-indigo-500 mt-1"></i>
+                            <div>
+                                <strong class="block text-navy text-sm" data-i18n="career_edu_7_title">Regulación Sanitaria en Lactarios</strong>
+                                <span class="text-xs text-gray-500" data-i18n="career_edu_7_desc">Normativa para espacios de lactancia materna</span>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -891,6 +919,11 @@
                 "career_edu_4_desc": "Yellow & Green (Certificado) | Black Belt (Fase de Proyecto)",
                 "career_edu_5_title": "Data Science Bootcamp",
                 "career_edu_5_desc": "Gestión de Dashboards y Análisis de Datos",
+                // NUEVAS TRADUCCIONES PARA CURSOS
+                "career_edu_6_title": "Buenas Prácticas de Higiene (NOM-251)",
+                "career_edu_6_desc": "Preparación de Alimentos (NOM-251-SSA1-2009)",
+                "career_edu_7_title": "Regulación Sanitaria en Lactarios",
+                "career_edu_7_desc": "Normativa para espacios de lactancia materna",
                 // Dashboard Translations MODIFIED
                 "kpi_days": "Días Incapacidad",
                 "kpi_compliance": "Cumplimiento ISO",
@@ -1057,6 +1090,11 @@
                 "career_edu_4_desc": "Yellow & Green (Certified) | Black Belt (Project Phase)",
                 "career_edu_5_title": "Data Science Bootcamp",
                 "career_edu_5_desc": "Dashboard Management & Data Analytics",
+                // NEW COURSE TRANSLATIONS
+                "career_edu_6_title": "Good Hygiene Practices (NOM-251)",
+                "career_edu_6_desc": "Food Preparation Safety (NOM-251-SSA1-2009)",
+                "career_edu_7_title": "Sanitary Regulation in Nursing Rooms",
+                "career_edu_7_desc": "Compliance standards for lactation spaces",
                 // Dashboard Translations MODIFIED
                 "kpi_days": "Disability Days",
                 "kpi_compliance": "ISO Compliance",
