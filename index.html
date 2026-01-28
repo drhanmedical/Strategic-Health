@@ -61,7 +61,9 @@
         .font-signature { font-family: 'Dancing Script', cursive; }
         .gradient-text { background: linear-gradient(to right, #0ea5e9, #0d9488); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         
+        /* REGLA GLOBAL PARA EVITAR SILABEO EN TEXTO JUSTIFICADO */
         .text-justify {
+            text-align: justify;
             hyphens: none !important;
             -webkit-hyphens: none !important;
             -ms-hyphens: none !important;
@@ -80,6 +82,7 @@
         .toggle-checkbox:checked { right: 0; border-color: #0d9488; }
         .toggle-checkbox:checked + .toggle-label { background-color: #0d9488; }
         
+        /* Scrollbar custom */
         .custom-scrollbar::-webkit-scrollbar { width: 6px; }
         .custom-scrollbar::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 10px; }
@@ -159,7 +162,8 @@
                         Strategic Health, <br>
                         <span class="gradient-text">Wellness & Regulatory</span> Leader.
                     </h1>
-                    <h2 class="text-base lg:text-lg text-gray-400 mb-8 font-light leading-relaxed max-w-2xl mx-auto lg:mx-0 text-justify lg:text-left hyphens-none" data-i18n="hero_desc">
+                    <!-- JUSTIFICADO APLICADO -->
+                    <h2 class="text-base lg:text-lg text-gray-400 mb-8 font-light leading-relaxed max-w-2xl mx-auto lg:mx-0 text-justify hyphens-none" data-i18n="hero_desc">
                         Soy el <strong class="text-white">Dr. Han</strong>. Lidero la transformación de la salud corporativa, alineando el cumplimiento normativo estricto con estrategias de bienestar que impulsan la rentabilidad y blindan la operación.
                     </h2>
                     <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
@@ -181,98 +185,149 @@
         </div>
     </section>
 
-    <!-- SECTION: ESTRATEGIA -->
+    <!-- SECTION: ESTRATEGIA (Optimizado para Ingenieros) -->
     <section id="about" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <h2 class="text-3xl lg:text-4xl font-heading font-bold text-navy mb-4" data-i18n="about_title">Ingeniería de Salud Operativa y <span class="text-teal">Mejora Continua.</span></h2>
                 <div class="w-24 h-1 bg-sky mx-auto rounded mb-6"></div>
+                <!-- JUSTIFICADO APLICADO -->
                 <p class="text-lg text-gray-600 leading-relaxed text-justify px-4 lg:px-0 hyphens-none" data-i18n="about_desc">Integro principios de medicina laboral con metodologías de ingeniería (Lean Six Sigma, Análisis de Causa Raíz) para transformar la salud en un KPI medible. Mi enfoque no es solo clínico, es estructural: optimizo procesos para garantizar continuidad operativa y cumplimiento ISO/STPS.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="p-8 rounded-xl bg-slate border border-gray-100 hover:shadow-xl transition-shadow group">
                     <div class="w-14 h-14 bg-navy rounded-lg flex items-center justify-center mb-6 group-hover:bg-sky transition-colors"><i class="fas fa-clipboard-check text-white text-2xl"></i></div>
                     <h3 class="text-xl font-heading font-bold text-navy mb-3" data-i18n="card1_title">Auditoría & Estándares</h3>
+                    <!-- JUSTIFICADO APLICADO -->
                     <p class="text-gray-600 text-sm leading-relaxed text-justify hyphens-none" data-i18n="card1_desc">Competencias probadas en ISO 9001, 19011 y 45001. Gestión basada en evidencia para "Zero Fines" en inspecciones STPS.</p>
                 </div>
                 <div class="p-8 rounded-xl bg-slate border border-gray-100 hover:shadow-xl transition-shadow group">
                     <div class="w-14 h-14 bg-navy rounded-lg flex items-center justify-center mb-6 group-hover:bg-teal transition-colors"><i class="fas fa-chart-line text-white text-2xl"></i></div>
                     <h3 class="text-xl font-heading font-bold text-navy mb-3" data-i18n="card2_title">ROI & Siniestralidad</h3>
+                    <!-- JUSTIFICADO APLICADO -->
                     <p class="text-gray-600 text-sm leading-relaxed text-justify hyphens-none" data-i18n="card2_desc">Control agresivo de formatos ST-7/ST-9 ante el IMSS. Reducción directa de la Prima de Riesgo mediante análisis de datos y prevención técnica.</p>
                 </div>
                 <div class="p-8 rounded-xl bg-slate border border-gray-100 hover:shadow-xl transition-shadow group">
                     <div class="w-14 h-14 bg-navy rounded-lg flex items-center justify-center mb-6 group-hover:bg-sky transition-colors"><i class="fas fa-hard-hat text-white text-2xl"></i></div>
                     <h3 class="text-xl font-heading font-bold text-navy mb-3" data-i18n="card3_title">Seguridad Operativa</h3>
+                    <!-- JUSTIFICADO APLICADO -->
                     <p class="text-gray-600 text-sm leading-relaxed text-justify hyphens-none" data-i18n="card3_desc">Gestión de riesgos en entornos de alta demanda (Aviación, Logística). Protocolos de fatiga y aptitud psicofísica para personal crítico.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION: NORMATIVIDAD -->
+    <!-- SECTION: NORMATIVIDAD (Híbrido: Legal + ISO + Procesos) -->
     <section id="legal-shield" class="py-24 bg-slate-50 relative overflow-hidden">
         <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
             <div class="absolute -top-24 -left-24 w-96 h-96 bg-gray-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50"></div>
             <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-gray-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50"></div>
         </div>
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center mb-16">
                 <span class="text-teal font-bold tracking-widest uppercase text-xs" data-i18n="legal_badge">COMPLIANCE & EHS</span>
                 <h2 class="text-3xl lg:text-4xl font-heading font-bold text-navy mt-2 mb-6" data-i18n="legal_title">Marco Normativo: <span class="text-indigo-600">Datos, ISO & STPS</span></h2>
-                <p class="text-gray-600 max-w-2xl mx-auto text-lg" data-i18n="legal_desc">
+                <!-- JUSTIFICADO APLICADO -->
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg text-justify hyphens-none" data-i18n="legal_desc">
                     Un sistema de gestión integrado que une la seguridad jurídica (LFPDPPP) con la excelencia operativa (ISO/Lean). Protejo la licencia sanitaria y optimizo los procesos de EHS.
                 </p>
             </div>
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Card 1 -->
                 <div class="bg-white rounded-xl shadow-lg border-b-4 border-teal p-6 hover:transform hover:-translate-y-2 transition-all duration-300">
-                    <div class="flex items-center justify-between mb-4"><span class="font-bold text-2xl text-gray-200">01</span><i class="fas fa-project-diagram text-teal text-2xl"></i></div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="font-bold text-2xl text-gray-200">01</span>
+                        <i class="fas fa-project-diagram text-teal text-2xl"></i>
+                    </div>
                     <h3 class="font-heading font-bold text-navy text-lg mb-2">Sistemas de Gestión</h3>
-                    <p class="text-sm text-gray-600 mb-4" data-i18n="legal_c1_desc">Auditoría interna ISO 45001/9001 y mejora continua con Lean Six Sigma.</p>
+                    <!-- JUSTIFICADO APLICADO -->
+                    <p class="text-sm text-gray-600 mb-4 text-justify hyphens-none" data-i18n="legal_c1_desc">Auditoría interna ISO 45001/9001 y mejora continua con Lean Six Sigma.</p>
                 </div>
+
                 <!-- Card 2 -->
                 <div class="bg-white rounded-xl shadow-lg border-b-4 border-indigo-500 p-6 hover:transform hover:-translate-y-2 transition-all duration-300">
-                    <div class="flex items-center justify-between mb-4"><span class="font-bold text-2xl text-gray-200">02</span><i class="fas fa-user-shield text-indigo-500 text-2xl"></i></div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="font-bold text-2xl text-gray-200">02</span>
+                        <i class="fas fa-user-shield text-indigo-500 text-2xl"></i>
+                    </div>
                     <h3 class="font-heading font-bold text-navy text-lg mb-2">Privacidad de Datos</h3>
-                    <p class="text-sm text-gray-600 mb-4" data-i18n="legal_c2_desc">Cumplimiento estricto de LFPDPPP para manejo de datos sensibles de colaboradores.</p>
+                    <!-- JUSTIFICADO APLICADO -->
+                    <p class="text-sm text-gray-600 mb-4 text-justify hyphens-none" data-i18n="legal_c2_desc">Cumplimiento estricto de LFPDPPP para manejo de datos sensibles de colaboradores.</p>
                 </div>
+
                 <!-- Card 3 -->
                 <div class="bg-white rounded-xl shadow-lg border-b-4 border-orange-500 p-6 hover:transform hover:-translate-y-2 transition-all duration-300">
-                    <div class="flex items-center justify-between mb-4"><span class="font-bold text-2xl text-gray-200">03</span><i class="fas fa-file-medical text-orange-500 text-2xl"></i></div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="font-bold text-2xl text-gray-200">03</span>
+                        <i class="fas fa-file-medical text-orange-500 text-2xl"></i>
+                    </div>
                     <h3 class="font-heading font-bold text-navy text-lg mb-2" data-i18n="legal_c3_title">NOM-004-SSA3</h3>
-                    <p class="text-sm text-gray-600 mb-4" data-i18n="legal_c3_desc">Integración clínica robusta para defensa legal ante controversias o auditorías sanitarias.</p>
+                    <!-- JUSTIFICADO APLICADO -->
+                    <p class="text-sm text-gray-600 mb-4 text-justify hyphens-none" data-i18n="legal_c3_desc">Integración clínica robusta para defensa legal ante controversias o auditorías sanitarias.</p>
                 </div>
+
                 <!-- Card 4 -->
                 <div class="bg-white rounded-xl shadow-lg border-b-4 border-navy p-6 hover:transform hover:-translate-y-2 transition-all duration-300">
-                    <div class="flex items-center justify-between mb-4"><span class="font-bold text-2xl text-gray-200">04</span><i class="fas fa-helmet-safety text-navy text-2xl"></i></div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="font-bold text-2xl text-gray-200">04</span>
+                        <i class="fas fa-helmet-safety text-navy text-2xl"></i>
+                    </div>
                     <h3 class="font-heading font-bold text-navy text-lg mb-2" data-i18n="legal_c4_title">Normatividad STPS</h3>
-                    <p class="text-sm text-gray-600 mb-4" data-i18n="legal_c4_desc">Implementación técnica de NOMs críticas para seguridad e higiene industrial.</p>
+                    <!-- JUSTIFICADO APLICADO -->
+                    <p class="text-sm text-gray-600 mb-4 text-justify hyphens-none" data-i18n="legal_c4_desc">Implementación técnica de NOMs críticas para seguridad e higiene industrial.</p>
                 </div>
+
                 <!-- Card 5 -->
                 <div class="bg-white rounded-xl shadow-lg border-b-4 border-pink-400 p-6 hover:transform hover:-translate-y-2 transition-all duration-300">
-                    <div class="flex items-center justify-between mb-4"><span class="font-bold text-2xl text-gray-200">05</span><i class="fas fa-person-breastfeeding text-pink-400 text-2xl"></i></div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="font-bold text-2xl text-gray-200">05</span>
+                        <i class="fas fa-person-breastfeeding text-pink-400 text-2xl"></i>
+                    </div>
                     <h3 class="font-heading font-bold text-navy text-lg mb-2" data-i18n="legal_c5_title">Lactarios Dignos</h3>
-                    <p class="text-sm text-gray-600 mb-4" data-i18n="legal_c5_desc">Regulación sanitaria técnica para la instalación y operación de salas de lactancia.</p>
+                    <!-- JUSTIFICADO APLICADO -->
+                    <p class="text-sm text-gray-600 mb-4 text-justify hyphens-none" data-i18n="legal_c5_desc">Regulación sanitaria técnica para la instalación y operación de salas de lactancia.</p>
                 </div>
+
                 <!-- Card 6 -->
                 <div class="bg-white rounded-xl shadow-lg border-b-4 border-green-500 p-6 hover:transform hover:-translate-y-2 transition-all duration-300">
-                    <div class="flex items-center justify-between mb-4"><span class="font-bold text-2xl text-gray-200">06</span><i class="fas fa-utensils text-green-500 text-2xl"></i></div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="font-bold text-2xl text-gray-200">06</span>
+                        <i class="fas fa-utensils text-green-500 text-2xl"></i>
+                    </div>
                     <h3 class="font-heading font-bold text-navy text-lg mb-2" data-i18n="legal_c6_title">Higiene (NOM-251)</h3>
-                    <p class="text-sm text-gray-600 mb-4" data-i18n="legal_c6_desc">Buenas prácticas de higiene en la preparación de alimentos y comedores industriales.</p>
+                    <!-- JUSTIFICADO APLICADO -->
+                    <p class="text-sm text-gray-600 mb-4 text-justify hyphens-none" data-i18n="legal_c6_desc">Buenas prácticas de higiene en la preparación de alimentos y comedores industriales.</p>
                 </div>
+
                 <!-- Card 7 -->
                 <div class="bg-white rounded-xl shadow-lg border-b-4 border-red-600 p-6 hover:transform hover:-translate-y-2 transition-all duration-300">
-                    <div class="flex items-center justify-between mb-4"><span class="font-bold text-2xl text-gray-200">07</span><i class="fas fa-biohazard text-red-600 text-2xl"></i></div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="font-bold text-2xl text-gray-200">07</span>
+                        <i class="fas fa-biohazard text-red-600 text-2xl"></i>
+                    </div>
                     <h3 class="font-heading font-bold text-navy text-lg mb-2" data-i18n="legal_c7_title">RPBI (NOM-087)</h3>
-                    <p class="text-sm text-gray-600 mb-4" data-i18n="legal_c7_desc">Manejo seguro de Residuos Peligrosos Biológico-Infecciosos y normativa ambiental.</p>
+                    <!-- JUSTIFICADO APLICADO -->
+                    <p class="text-sm text-gray-600 mb-4 text-justify hyphens-none" data-i18n="legal_c7_desc">Manejo seguro de Residuos Peligrosos Biológico-Infecciosos y normativa ambiental.</p>
                 </div>
             </div>
+
+            <!-- Bottom CTA -->
             <div class="mt-16 bg-white rounded-2xl p-8 shadow-xl border border-gray-100 flex flex-col md:flex-row items-center justify-between gap-8">
                 <div class="flex items-center gap-6">
-                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 text-3xl"><i class="fas fa-file-contract"></i></div>
-                    <div><h4 class="font-heading font-bold text-navy text-xl" data-i18n="legal_cta_title">¿Listo para una auditoría?</h4><p class="text-sm text-gray-600" data-i18n="legal_cta_desc">Simulacros de inspección STPS y auditoría de expedientes clínicos para asegurar cumplimiento total.</p></div>
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 text-3xl">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-heading font-bold text-navy text-xl" data-i18n="legal_cta_title">¿Listo para una auditoría?</h4>
+                        <!-- JUSTIFICADO APLICADO -->
+                        <p class="text-sm text-gray-600 text-justify hyphens-none" data-i18n="legal_cta_desc">Simulacros de inspección STPS y auditoría de expedientes clínicos para asegurar cumplimiento total.</p>
+                    </div>
                 </div>
-                <a href="#contact" class="px-8 py-4 bg-navy text-white font-bold rounded-lg shadow-lg hover:bg-teal transition-all duration-300 whitespace-nowrap" data-i18n="legal_btn">Auditar Cumplimiento</a>
+                <a href="#contact" class="px-8 py-4 bg-navy text-white font-bold rounded-lg shadow-lg hover:bg-teal transition-all duration-300 whitespace-nowrap" data-i18n="legal_btn">
+                    Auditar Cumplimiento
+                </a>
             </div>
         </div>
     </section>
@@ -282,12 +337,18 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-3xl lg:text-4xl font-heading font-bold text-navy mb-6" data-i18n="bi_title">Decisiones basadas en datos.<br><span class="text-sky">No en suposiciones.</span></h2>
-                <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed" data-i18n="bi_desc">Interactúa con este simulador real para ver cómo transformo indicadores médicos en decisiones financieras y operativas.</p>
+                <!-- JUSTIFICADO APLICADO -->
+                <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed text-justify hyphens-none" data-i18n="bi_desc">Interactúa con este simulador real para ver cómo transformo indicadores médicos en decisiones financieras y operativas.</p>
             </div>
+
             <div class="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden flex flex-col md:flex-row min-h-[750px]">
+                
                 <!-- SIDEBAR -->
                 <div class="w-full md:w-64 bg-navy text-white p-6 flex flex-col">
-                    <div class="mb-10 flex items-center gap-3 px-2"><span class="font-heading font-bold text-lg tracking-wide block">DR. HAN</span><span class="text-[10px] text-teal tracking-wider uppercase">Analytics</span></div>
+                    <div class="mb-10 flex items-center gap-3 px-2">
+                        <span class="font-heading font-bold text-lg tracking-wide block">DR. HAN</span>
+                        <span class="text-[10px] text-teal tracking-wider uppercase">Analytics</span>
+                    </div>
                     <nav class="space-y-2 flex-1">
                         <button onclick="switchDashTab('general')" id="tab-general" class="dash-sidebar-btn w-full flex items-center space-x-3 px-4 py-3 rounded-lg active text-left"><i class="fas fa-chart-pie w-5"></i> <span data-i18n="bi_btn_general">Dashboard General</span></button>
                         <button onclick="switchDashTab('nom035')" id="tab-nom035" class="dash-sidebar-btn w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-400 text-left"><i class="fas fa-brain w-5"></i> <span data-i18n="bi_btn_035">Psicosocial NOM-035</span></button>
@@ -296,18 +357,30 @@
                         <button onclick="switchDashTab('wellness')" id="tab-wellness" class="dash-sidebar-btn w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-400 text-left"><i class="fas fa-heart-pulse w-5"></i> <span data-i18n="bi_btn_wellness">Wellness & Retención</span></button>
                     </nav>
                 </div>
+
                 <!-- MAIN CONTENT -->
                 <div class="flex-1 bg-slate-50 p-6 md:p-8 overflow-y-auto">
+                    <!-- CONTROLS -->
                     <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
-                        <div><h3 class="text-xl font-heading font-bold text-navy" id="dash-title" data-i18n="dash_header_title">Centro de Comando Estratégico</h3><p class="text-gray-400 text-xs mt-1" data-i18n="dash_header_status">Status: En línea • Datos actualizados</p></div>
+                        <div>
+                            <h3 class="text-xl font-heading font-bold text-navy" id="dash-title" data-i18n="dash_header_title">Centro de Comando Estratégico</h3>
+                            <p class="text-gray-400 text-xs mt-1" data-i18n="dash_header_status">Status: En línea • Datos actualizados</p>
+                        </div>
                         <div class="flex items-center space-x-3">
                             <div class="flex items-center gap-4 bg-white p-2 rounded-lg shadow-sm border border-gray-200 mr-2">
-                                <div class="text-right hidden sm:block"><span class="block text-[10px] font-bold text-gray-400 uppercase tracking-wide" data-i18n="dash_toggle_label">Estrategia</span><span id="strategy-label" class="text-xs font-bold text-teal transition-colors">Con Gestión Dr. Han</span></div>
-                                <div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in"><input type="checkbox" name="toggle" id="han-toggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer border-gray-300" checked/><label for="han-toggle" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label></div>
+                                <div class="text-right hidden sm:block">
+                                    <span class="block text-[10px] font-bold text-gray-400 uppercase tracking-wide" data-i18n="dash_toggle_label">Estrategia</span>
+                                    <span id="strategy-label" class="text-xs font-bold text-teal transition-colors">Con Gestión Dr. Han</span>
+                                </div>
+                                <div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+                                    <input type="checkbox" name="toggle" id="han-toggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer border-gray-300" checked/>
+                                    <label for="han-toggle" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <!-- VIEWS -->
+
+                    <!-- VIEWS (Content remains the same, layout preserved) -->
                     <div id="view-general" class="dash-view animate-fade-in">
                          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
                             <div class="kpi-card bg-white p-5 rounded-xl border border-gray-100 shadow-sm relative overflow-hidden group">
@@ -322,12 +395,22 @@
                             </div>
                             <div class="kpi-card bg-white p-5 rounded-xl border border-gray-100 shadow-sm relative overflow-hidden group">
                                 <div class="absolute top-0 left-0 w-full h-1 bg-sky transition-colors duration-300" id="kpi-risk-bar"></div>
-                                <div class="flex justify-between items-start mb-2"><span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest" data-i18n="kpi_risk">Índice de Burnout (035)</span><div class="w-8 h-8 rounded-lg bg-sky/10 flex items-center justify-center text-sky transition-colors duration-300" id="kpi-risk-icon"><i class="fas fa-fire-flame-curved"></i></div></div>
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest" data-i18n="kpi_risk">Índice de Burnout (035)</span>
+                                    <div class="w-8 h-8 rounded-lg bg-sky/10 flex items-center justify-center text-sky transition-colors duration-300" id="kpi-risk-icon">
+                                        <i class="fas fa-fire-flame-curved"></i>
+                                    </div>
+                                </div>
                                 <h4 class="text-3xl font-heading font-bold text-navy mb-1" id="kpi-risk">2.1</h4>
                             </div>
                             <div class="kpi-card bg-white p-5 rounded-xl border border-gray-100 shadow-sm relative overflow-hidden group">
                                 <div class="absolute top-0 left-0 w-full h-1 bg-orange-400 transition-colors duration-300" id="kpi-cost-bar"></div>
-                                <div class="flex justify-between items-start mb-2"><span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest" data-i18n="kpi_cost">Riesgo de Rotación</span><div class="w-8 h-8 rounded-lg bg-orange-50 flex items-center justify-center text-orange-500 transition-colors duration-300" id="kpi-cost-icon"><i class="fas fa-person-walking-dashed"></i></div></div>
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest" data-i18n="kpi_cost">Riesgo de Rotación</span>
+                                    <div class="w-8 h-8 rounded-lg bg-orange-50 flex items-center justify-center text-orange-500 transition-colors duration-300" id="kpi-cost-icon">
+                                        <i class="fas fa-person-walking-dashed"></i>
+                                    </div>
+                                </div>
                                 <h4 class="text-3xl font-heading font-bold text-navy mb-1" id="kpi-cost">Bajo</h4>
                             </div>
                         </div>
@@ -336,7 +419,7 @@
                             <div class="h-64 w-full"><canvas id="trendChart"></canvas></div>
                         </div>
                     </div>
-                    <!-- Other Views (NOM-035, Risks, ISO, Wellness) same as before, condensed for brevity in display but fully functional -->
+
                     <div id="view-nom035" class="dash-view hidden animate-fade-in">
                         <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm mb-8 flex flex-col md:flex-row justify-between items-center gap-6">
                             <div class="flex-1 w-full">
@@ -349,25 +432,104 @@
                             <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100"><div class="h-72 w-full flex items-center justify-center"><canvas id="nom035PieChart"></canvas></div></div>
                         </div>
                     </div>
+
                     <div id="view-riesgos" class="dash-view hidden animate-fade-in">
                          <div class="grid lg:grid-cols-12 gap-6 mb-8">
+                            <!-- Panel Control -->
                             <div class="lg:col-span-6 bg-navy text-white p-6 rounded-xl shadow-xl border border-gray-800 h-full">
-                                <div class="flex items-center justify-between mb-6"><h3 class="font-heading font-bold text-lg flex items-center gap-2 text-white"><i class="fas fa-sliders text-teal"></i> <span data-i18n="sim_panel_title">Panel de Variables</span></h3><select id="sim-method-select" class="bg-white text-gray-900 text-[10px] px-3 py-1.5 rounded font-bold uppercase cursor-pointer hover:bg-gray-100 transition-colors"><option value="nom036">NOM-036-1 (MAC)</option><option value="rula">RULA (Upper Limb)</option><option value="reba">REBA (Entire Body)</option></select></div>
+                                <div class="flex items-center justify-between mb-6">
+                                    <h3 class="font-heading font-bold text-lg flex items-center gap-2 text-white"><i class="fas fa-sliders text-teal"></i> <span data-i18n="sim_panel_title">Panel de Variables</span></h3>
+                                    <select id="sim-method-select" class="bg-white text-gray-900 text-[10px] px-3 py-1.5 rounded font-bold uppercase cursor-pointer hover:bg-gray-100 transition-colors">
+                                        <option value="nom036">NOM-036-1 (MAC)</option>
+                                        <option value="rula">RULA (Upper Limb)</option>
+                                        <option value="reba">REBA (Entire Body)</option>
+                                    </select>
+                                </div>
                                 <div id="inputs-nom036" class="space-y-5">
                                     <div class="bg-slate-800/50 p-4 rounded-lg border border-white/5">
                                         <div class="flex justify-between mb-3 text-xs items-center"><span class="text-gray-300 font-bold uppercase" data-i18n="sim_load">Carga Física</span><span class="font-mono font-bold text-teal bg-teal/10 px-2 py-0.5 rounded" id="sim-weight-val">20 kg</span></div>
                                         <input type="range" min="2" max="50" value="20" id="sim-weight" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-teal mb-4">
-                                        <div class="grid grid-cols-3 gap-2"><button class="sim-btn-freq flex flex-col items-center justify-center py-2.5 rounded-lg border shadow-lg bg-teal border-teal text-white" data-val="low"><span class="text-[10px] font-bold" data-i18n="sim_freq_low">Baja</span></button><button class="sim-btn-freq flex flex-col items-center justify-center py-2.5 rounded-lg border border-slate-700 bg-slate-800/50 text-gray-400" data-val="med"><span class="text-[10px] font-bold" data-i18n="sim_freq_med">Media</span></button><button class="sim-btn-freq flex flex-col items-center justify-center py-2.5 rounded-lg border border-slate-700 bg-slate-800/50 text-gray-400" data-val="high"><span class="text-[10px] font-bold" data-i18n="sim_freq_high">Alta</span></button></div>
+                                        <div class="grid grid-cols-3 gap-2">
+                                            <button class="sim-btn-freq flex flex-col items-center justify-center py-2.5 rounded-lg border shadow-lg bg-teal border-teal text-white" data-val="low"><span class="text-[10px] font-bold" data-i18n="sim_freq_low">Baja</span></button>
+                                            <button class="sim-btn-freq flex flex-col items-center justify-center py-2.5 rounded-lg border border-slate-700 bg-slate-800/50 text-gray-400" data-val="med"><span class="text-[10px] font-bold" data-i18n="sim_freq_med">Media</span></button>
+                                            <button class="sim-btn-freq flex flex-col items-center justify-center py-2.5 rounded-lg border border-slate-700 bg-slate-800/50 text-gray-400" data-val="high"><span class="text-[10px] font-bold" data-i18n="sim_freq_high">Alta</span></button>
+                                        </div>
                                     </div>
-                                    <div class="space-y-3"><select id="sim-h-dist" class="w-full bg-white text-gray-900 text-xs py-2.5 px-3 rounded-lg"><option value="close" data-i18n="sim_opt_close">Cerca</option><option value="med" data-i18n="sim_opt_med">Media</option><option value="far" data-i18n="sim_opt_far">Lejos</option></select><select id="sim-v-pos" class="w-full bg-white text-gray-900 text-xs py-2.5 px-3 rounded-lg"><option value="ideal" data-i18n="sim_opt_knuckle">Nudillos</option><option value="bad" data-i18n="sim_opt_shoulder">Hombros</option><option value="crit" data-i18n="sim_opt_floor">Suelo</option></select><select id="sim-grip" class="w-full bg-white text-gray-900 text-xs py-2 px-3 rounded-lg"><option value="good" data-i18n="sim_opt_good">Bueno</option><option value="fair" data-i18n="sim_opt_fair">Regular</option></select></div>
+                                    <div class="space-y-3">
+                                        <select id="sim-h-dist" class="w-full bg-white text-gray-900 text-xs py-2.5 px-3 rounded-lg"><option value="close" data-i18n="sim_opt_close">Cerca</option><option value="med" data-i18n="sim_opt_med">Media</option><option value="far" data-i18n="sim_opt_far">Lejos</option></select>
+                                        <select id="sim-v-pos" class="w-full bg-white text-gray-900 text-xs py-2.5 px-3 rounded-lg"><option value="ideal" data-i18n="sim_opt_knuckle">Nudillos</option><option value="bad" data-i18n="sim_opt_shoulder">Hombros</option><option value="crit" data-i18n="sim_opt_floor">Suelo</option></select>
+                                        <select id="sim-grip" class="w-full bg-white text-gray-900 text-xs py-2 px-3 rounded-lg"><option value="good" data-i18n="sim_opt_good">Bueno</option><option value="fair" data-i18n="sim_opt_fair">Regular</option></select>
+                                    </div>
                                 </div>
-                                <div id="inputs-rula" class="space-y-4 hidden"><div class="space-y-1"><label class="text-[10px] font-bold text-gray-400 uppercase" data-i18n="sim_rula_arm">Brazo (Hombro)</label><select id="rula-arm" class="w-full bg-white text-gray-900 text-xs py-2 px-3 rounded-lg text-black"><option value="1">Neutral (0-20°)</option><option value="2">Flexión Leve (>20°)</option><option value="3">Elevado (45-90°)</option><option value="4">Extremo (>90°)</option></select></div><div class="space-y-1"><label class="text-[10px] font-bold text-gray-400 uppercase" data-i18n="sim_rula_neck">Cuello / Tronco</label><select id="rula-neck-trunk" class="w-full bg-white text-gray-900 text-xs py-2 px-3 rounded-lg text-black"><option value="1">Alineados</option><option value="2">Inclinación <20°</option><option value="3">Inclinación >20°</option><option value="4">Torsión/Lateral</option></select></div><div class="bg-slate-800/50 p-3 rounded-lg border border-white/5"><div class="flex justify-between mb-2 text-xs items-center"><span class="text-gray-300 font-bold uppercase" data-i18n="sim_load">Carga/Fuerza</span></div><select id="rula-load" class="w-full bg-white text-gray-900 text-xs py-2 px-3 rounded border border-slate-600 text-black"><option value="0">< 2 kg (Intermitente)</option><option value="1">2 - 10 kg</option><option value="2">2 - 10 kg (Estático)</option><option value="3">> 10 kg</option></select></div></div>
-                                <div id="inputs-reba" class="space-y-4 hidden"><div class="space-y-1"><label class="text-[10px] font-bold text-gray-400 uppercase" data-i18n="sim_reba_trunk">Tronco</label><select id="reba-trunk" class="w-full bg-white text-gray-900 text-xs py-2 px-3 rounded-lg text-black"><option value="1">Erguido</option><option value="2">Flexión 0-20°</option><option value="3">Flexión 20-60°</option><option value="4">Flexión >60°</option></select></div><div class="space-y-1"><label class="text-[10px] font-bold text-gray-400 uppercase" data-i18n="sim_reba_legs">Piernas</label><select id="reba-legs" class="w-full bg-white text-gray-900 text-xs py-2 px-3 rounded-lg text-black"><option value="1">Soporte Bilateral</option><option value="2">Soporte Unilateral</option></select></div><div class="bg-slate-800/50 p-3 rounded-lg border border-white/5"><div class="flex justify-between mb-2 text-xs items-center"><span class="text-gray-300 font-bold uppercase" data-i18n="sim_load">Carga/Fuerza</span></div><select id="reba-load" class="w-full bg-white text-gray-900 text-xs py-2 px-3 rounded border border-slate-600 text-black"><option value="0">< 5 kg</option><option value="1">5 - 10 kg</option><option value="2">> 10 kg</option></select></div></div>
+                                <div id="inputs-rula" class="space-y-4 hidden">
+                                   <!-- Upper Arm -->
+                                   <div class="space-y-1">
+                                       <label class="text-[10px] font-bold text-gray-400 uppercase" data-i18n="sim_rula_arm">Brazo (Hombro)</label>
+                                       <select id="rula-arm" class="w-full bg-white text-gray-900 text-xs py-2 px-3 rounded-lg text-black">
+                                           <option value="1">Neutral (0-20°)</option>
+                                           <option value="2">Flexión Leve (>20°)</option>
+                                           <option value="3">Elevado (45-90°)</option>
+                                           <option value="4">Extremo (>90°)</option>
+                                       </select>
+                                   </div>
+                                   <!-- Neck/Trunk -->
+                                   <div class="space-y-1">
+                                       <label class="text-[10px] font-bold text-gray-400 uppercase" data-i18n="sim_rula_neck">Cuello / Tronco</label>
+                                       <select id="rula-neck-trunk" class="w-full bg-white text-gray-900 text-xs py-2 px-3 rounded-lg text-black">
+                                           <option value="1">Alineados</option>
+                                           <option value="2">Inclinación <20°</option>
+                                           <option value="3">Inclinación >20°</option>
+                                           <option value="4">Torsión/Lateral</option>
+                                       </select>
+                                   </div>
+                                   <!-- Load/Activity -->
+                                    <div class="bg-slate-800/50 p-3 rounded-lg border border-white/5">
+                                        <div class="flex justify-between mb-2 text-xs items-center"><span class="text-gray-300 font-bold uppercase" data-i18n="sim_load">Carga/Fuerza</span></div>
+                                         <select id="rula-load" class="w-full bg-white text-gray-900 text-xs py-2 px-3 rounded border border-slate-600 text-black">
+                                           <option value="0">< 2 kg (Intermitente)</option>
+                                           <option value="1">2 - 10 kg</option>
+                                           <option value="2">2 - 10 kg (Estático)</option>
+                                           <option value="3">> 10 kg</option>
+                                       </select>
+                                    </div>
+                                </div>
+                                <div id="inputs-reba" class="space-y-4 hidden">
+                                    <!-- Trunk -->
+                                    <div class="space-y-1">
+                                        <label class="text-[10px] font-bold text-gray-400 uppercase" data-i18n="sim_reba_trunk">Tronco</label>
+                                        <select id="reba-trunk" class="w-full bg-white text-gray-900 text-xs py-2 px-3 rounded-lg text-black">
+                                            <option value="1">Erguido</option>
+                                            <option value="2">Flexión 0-20°</option>
+                                            <option value="3">Flexión 20-60°</option>
+                                            <option value="4">Flexión >60°</option>
+                                        </select>
+                                    </div>
+                                    <!-- Legs -->
+                                    <div class="space-y-1">
+                                        <label class="text-[10px] font-bold text-gray-400 uppercase" data-i18n="sim_reba_legs">Piernas</label>
+                                        <select id="reba-legs" class="w-full bg-white text-gray-900 text-xs py-2 px-3 rounded-lg text-black">
+                                            <option value="1">Soporte Bilateral</option>
+                                            <option value="2">Soporte Unilateral</option>
+                                        </select>
+                                    </div>
+                                    <!-- Load -->
+                                     <div class="bg-slate-800/50 p-3 rounded-lg border border-white/5">
+                                         <div class="flex justify-between mb-2 text-xs items-center"><span class="text-gray-300 font-bold uppercase" data-i18n="sim_load">Carga/Fuerza</span></div>
+                                          <select id="reba-load" class="w-full bg-white text-gray-900 text-xs py-2 px-3 rounded border border-slate-600 text-black">
+                                            <option value="0">< 5 kg</option>
+                                            <option value="1">5 - 10 kg</option>
+                                            <option value="2">> 10 kg</option>
+                                        </select>
+                                     </div>
+                                 </div>
                             </div>
+                            <!-- Visualizador -->
                             <div class="lg:col-span-6 bg-white p-6 rounded-xl shadow-xl border border-gray-200 flex flex-col justify-center items-center text-center relative overflow-hidden h-full">
                                 <h4 class="font-bold text-gray-400 text-xs uppercase tracking-widest absolute top-6 left-0 w-full text-center" data-i18n="sim_risk_title">Nivel de Riesgo Detectado</h4>
                                 <div class="my-6">
-                                    <div class="w-48 h-48 rounded-full border-8 flex items-center justify-center mb-4 mx-auto bg-gray-50" id="score-circle"><div><span class="text-6xl font-heading font-extrabold block" id="score-number">0</span></div></div>
+                                    <div class="w-48 h-48 rounded-full border-8 flex items-center justify-center mb-4 mx-auto bg-gray-50" id="score-circle">
+                                        <div><span class="text-6xl font-heading font-extrabold block" id="score-number">0</span></div>
+                                    </div>
                                     <h3 class="text-3xl font-heading font-extrabold mb-1" id="score-label">RIESGO BAJO</h3>
                                     <p class="text-sm font-bold text-navy mt-1" id="sim-method-display">NOM-036-1 (MAC)</p>
                                 </div>
@@ -375,13 +537,25 @@
                             </div>
                         </div>
                     </div>
+
                     <div id="view-iso45001" class="dash-view hidden animate-fade-in">
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                             <div class="kpi-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm relative overflow-hidden"><div class="absolute top-0 right-0 w-16 h-16 bg-blue-50 rounded-bl-full -mr-4 -mt-4"></div><div><span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest" data-i18n="iso_kpi_adherence">Adherencia Global</span><h4 class="text-3xl font-heading font-bold text-navy mb-1" id="kpi-iso-adherence">94%</h4></div><span class="text-xs text-blue-600 font-bold bg-blue-50 py-1 px-2 rounded w-fit mt-2" data-i18n="iso_status_cert">Certificable</span></div>
-                            <div class="kpi-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm relative overflow-hidden"><div class="absolute top-0 right-0 w-16 h-16 bg-orange-50 rounded-bl-full -mr-4 -mt-4"></div><div><span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest" data-i18n="iso_kpi_nc">No Conformidades</span><h4 class="text-3xl font-heading font-bold text-navy mb-1" id="kpi-iso-nc">0</h4></div><span class="text-xs text-gray-500 mt-2" data-i18n="iso_nc_critical">Mayores (Críticas)</span></div>
-                            <div class="kpi-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm relative overflow-hidden"><div class="absolute top-0 right-0 w-16 h-16 bg-teal/5 rounded-bl-full -mr-4 -mt-4"></div><div><span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest" data-i18n="iso_kpi_review">Rev. Dirección</span><h4 class="text-3xl font-heading font-bold text-navy mb-1" id="kpi-iso-review">OK</h4></div></div>
+                             <div class="kpi-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm relative overflow-hidden">
+                                <div class="absolute top-0 right-0 w-16 h-16 bg-blue-50 rounded-bl-full -mr-4 -mt-4"></div>
+                                <div><span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest" data-i18n="iso_kpi_adherence">Adherencia Global</span><h4 class="text-3xl font-heading font-bold text-navy mb-1" id="kpi-iso-adherence">94%</h4></div>
+                                <span class="text-xs text-blue-600 font-bold bg-blue-50 py-1 px-2 rounded w-fit mt-2" data-i18n="iso_status_cert">Certificable</span>
+                            </div>
+                            <div class="kpi-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm relative overflow-hidden">
+                                <div class="absolute top-0 right-0 w-16 h-16 bg-orange-50 rounded-bl-full -mr-4 -mt-4"></div>
+                                <div><span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest" data-i18n="iso_kpi_nc">No Conformidades</span><h4 class="text-3xl font-heading font-bold text-navy mb-1" id="kpi-iso-nc">0</h4></div>
+                                <span class="text-xs text-gray-500 mt-2" data-i18n="iso_nc_critical">Mayores (Críticas)</span>
+                            </div>
+                            <div class="kpi-card bg-white p-6 rounded-xl border border-gray-100 shadow-sm relative overflow-hidden">
+                                <div class="absolute top-0 right-0 w-16 h-16 bg-teal/5 rounded-bl-full -mr-4 -mt-4"></div>
+                                <div><span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest" data-i18n="iso_kpi_review">Rev. Dirección</span><h4 class="text-3xl font-heading font-bold text-navy mb-1" id="kpi-iso-review">OK</h4></div>
+                            </div>
                         </div>
-                         <!-- Auditoria Compleja (mismo código) -->
+
                         <div class="grid lg:grid-cols-12 gap-6 mb-8">
                             <div class="lg:col-span-4 bg-navy text-white p-6 rounded-xl shadow-xl border border-gray-800 flex flex-col h-full relative overflow-hidden">
                                 <div class="flex items-center justify-between mb-4"><h3 class="font-heading font-bold text-lg text-white" data-i18n="iso_panel_title">Panel de Auditoría</h3><span class="text-[10px] uppercase font-bold text-gray-400 border border-gray-600 px-2 py-0.5 rounded">Anexo SL</span></div>
@@ -432,6 +606,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div id="view-wellness" class="dash-view hidden animate-fade-in">
                         <div class="grid lg:grid-cols-2 gap-6 mb-8">
                             <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100"><h5 class="font-bold text-navy mb-4 text-sm" data-i18n="chart_bmi_title">Distribución IMC</h5><div class="h-64 w-full flex items-center justify-center"><canvas id="wellnessBMIChart"></canvas></div></div>
@@ -443,7 +618,7 @@
         </div>
     </section>
 
-     <!-- REPORT SECTION -->
+     <!-- Documento Oficial / Reporte Ejecutivo (CONECTADO AL SIMULADOR) -->
     <section class="py-16 bg-white border-t border-gray-100" id="reporte-final-section">
         <div class="max-w-4xl mx-auto px-6 sm:px-8 bg-white shadow-xl rounded-none sm:rounded-lg border border-gray-200 min-h-[800px] relative overflow-hidden my-10 print:shadow-none print:border-none transition-all duration-500">
             <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-[0.03] pointer-events-none z-0">
@@ -460,10 +635,16 @@
                 </div>
                 <div class="grid grid-cols-3 gap-6 mb-10 bg-slate-50 p-6 rounded-lg border border-gray-100">
                     <div class="text-center border-r border-gray-200"><p class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1" data-i18n="rep_kpi_compliance">Estatus Normativo</p><p class="text-2xl font-bold text-navy" id="rep-compliance">98%</p></div>
-                    <div class="text-center border-r border-gray-200"><p class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1" data-i18n="rep_kpi_financial">Talento Retenido</p><p class="text-2xl font-bold text-navy" id="rep-savings">98%</p></div>
+                    <!-- MODIFIED REPORT KPI: TALENT RETENTION -->
+                    <div class="text-center border-r border-gray-200">
+                        <p class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1" data-i18n="rep_kpi_financial">Talento Retenido</p>
+                        <p class="text-2xl font-bold text-navy" id="rep-savings">98%</p>
+                    </div>
                     <div class="text-center"><p class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1" data-i18n="rep_kpi_health">Salud Organizacional</p><p class="text-2xl font-bold text-navy" id="rep-health">8.4/10</p></div>
                 </div>
-                <div class="space-y-8" id="rep-body-content"></div>
+                <div class="space-y-8" id="rep-body-content">
+                    <!-- Contenido JS -->
+                </div>
                 <div class="mt-8 bg-indigo-50 border border-indigo-200 rounded-lg p-6 flex flex-col md:flex-row items-center justify-between gap-4">
                     <div><h5 class="font-bold text-navy text-sm" data-i18n="rep_cta_title">¿Su empresa enfrenta estos mismos desafíos?</h5><p class="text-xs text-gray-600" data-i18n="rep_cta_desc">Puedo implementar este mismo nivel de diagnóstico y solución en sus primeros 90 días.</p></div>
                     <a href="https://wa.me/525629846164" class="px-5 py-2.5 bg-navy text-white text-xs font-bold rounded shadow hover:bg-teal transition-colors whitespace-nowrap" data-i18n="rep_cta_btn">Agendar Diagnóstico Breve</a>
@@ -478,7 +659,7 @@
         </div>
     </section>
 
-    <!-- SECTION: AI SIMULATOR -->
+    <!-- NEW SECTION: GEMINI AI SIMULATOR -->
     <section id="ai-simulator" class="py-24 bg-gradient-to-br from-navy to-slate-900 relative text-white overflow-hidden">
         <div class="absolute inset-0 opacity-20">
             <div class="absolute top-10 left-10 w-64 h-64 bg-indigo-500 rounded-full blur-[100px]"></div>
@@ -488,11 +669,13 @@
             <div class="text-center mb-12">
                 <span class="inline-block py-1 px-3 rounded-full bg-indigo-900/50 border border-indigo-500 text-indigo-300 text-xs font-bold tracking-widest mb-4 uppercase"><i class="fas fa-sparkles mr-1"></i> Powered by Gemini AI</span>
                 <h2 class="text-3xl lg:text-4xl font-heading font-bold mb-4" data-i18n="ai_section_title">AI Strategic Simulator</h2>
-                <p class="text-gray-300 text-lg max-w-2xl mx-auto text-justify lg:text-center" data-i18n="ai_desc">La tecnología es una extensión de la estrategia. Ingrese un desafío actual y obtenga un pre-análisis basado en datos y cumplimiento.</p>
+                <!-- JUSTIFICADO APLICADO -->
+                <p class="text-gray-300 text-lg max-w-2xl mx-auto text-justify lg:text-center hyphens-none" data-i18n="ai_desc">La tecnología es una extensión de la estrategia. Ingrese un desafío actual y obtenga un pre-análisis basado en datos y cumplimiento.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-5 gap-8 bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 md:p-8 shadow-2xl">
                 <div class="md:col-span-2 flex flex-col gap-4">
                     <label for="ai-input" class="text-sm font-bold text-gray-300 uppercase tracking-wide" data-i18n="ai_input_label">Describa un reto</label>
+                    <!-- MODIFIED PLACEHOLDER -->
                     <textarea id="ai-input" rows="6" class="w-full bg-navy/50 border border-gray-600 rounded-lg p-4 text-white placeholder-gray-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all resize-none text-sm" placeholder="Ej: El área de ventas tiene alta rotación asociada a estrés. ¿Cómo lo mitigamos?" data-i18n="ai_input_placeholder"></textarea>
                     <button id="ai-generate-btn" class="w-full py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold rounded-lg shadow-lg shadow-indigo-500/30 transition-all transform hover:scale-[1.02] flex items-center justify-center gap-2"><span data-i18n="ai_btn_generate">Generar estrategia ✨</span></button>
                     <p class="text-[10px] text-gray-500 text-center italic" data-i18n="ai_disclaimer">Modelo: Gemini 2.5 Flash. Respuesta generada en tiempo real.</p>
@@ -516,7 +699,8 @@
             <div class="text-center mb-16">
                 <span class="text-teal font-bold tracking-widest uppercase text-xs" data-i18n="career_badge">EXPERIENCIA & LIDERAZGO</span>
                 <h2 class="text-3xl lg:text-4xl font-heading font-bold text-navy mt-2 mb-6" data-i18n="career_title">Trayectoria <span class="text-indigo-600">Profesional</span></h2>
-                <p class="text-gray-600 max-w-2xl mx-auto text-lg" data-i18n="career_desc">
+                <!-- JUSTIFICADO APLICADO -->
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg text-justify hyphens-none" data-i18n="career_desc">
                     Más de 6 años de experiencia consolidada en atención médica y gestión estratégica de servicios de salud corporativa.
                 </p>
             </div>
@@ -530,7 +714,8 @@
                         <span class="text-xs font-bold text-teal bg-teal/10 px-3 py-1 rounded-full w-fit mt-2 sm:mt-0" data-i18n="career_role1_date">Julio 2023 - Mayo 2025</span>
                     </div>
                     <h4 class="text-sm font-bold text-gray-500 mb-4 uppercase tracking-wide">Aeroméxico / Aeroméxico Cargo</h4>
-                    <p class="text-gray-600 text-sm leading-relaxed" data-i18n="career_role1_desc">
+                    <!-- JUSTIFICADO APLICADO -->
+                    <p class="text-gray-600 text-sm leading-relaxed text-justify hyphens-none" data-i18n="career_role1_desc">
                         <strong>Gestión de Siniestralidad:</strong> Liderazgo en investigación de accidentes y calificación de riesgos (ST-7, ST-9) ante el IMSS, logrando reducción directa de la Prima de Riesgo.<br>
                         <strong>Seguridad Crítica:</strong> Implementación de protocolos de fatiga y alcoholimetría para personal operativo.<br>
                         <strong>Administración Médica:</strong> Cobertura estratégica en Fresenius Kabi, DHL CEDIS y Walmart CEDIS.
@@ -545,7 +730,8 @@
                         <span class="text-xs font-bold text-gray-400 bg-gray-100 px-3 py-1 rounded-full w-fit mt-2 sm:mt-0" data-i18n="career_role2_date">Junio 2023 - Septiembre 2023</span>
                     </div>
                     <h4 class="text-sm font-bold text-gray-500 mb-4 uppercase tracking-wide">Grupo Vallarta Plus / GOPOST</h4>
-                    <p class="text-gray-600 text-sm leading-relaxed" data-i18n="career_role2_desc">
+                    <!-- JUSTIFICADO APLICADO -->
+                    <p class="text-gray-600 text-sm leading-relaxed text-justify hyphens-none" data-i18n="career_role2_desc">
                         Estructuración del departamento médico desde cero. Diseño de filtros médicos de reclutamiento para reducir rotación temprana y estandarización normativa de expedientes clínicos.
                     </p>
                 </div>
@@ -558,6 +744,7 @@
                         <span class="text-xs font-bold text-gray-400 bg-gray-100 px-3 py-1 rounded-full w-fit mt-2 sm:mt-0" data-i18n="career_role3_date">Febrero 2019 - Presente</span>
                     </div>
                     <h4 class="text-sm font-bold text-gray-500 mb-4 uppercase tracking-wide" data-i18n="career_role3_sub">Práctica Privada & Telemedicina</h4>
+                    <!-- JUSTIFICADO APLICADO -->
                     <p class="text-gray-600 text-sm leading-relaxed text-justify hyphens-none" data-i18n="career_role3_desc">
                         Atención híbrida (presencial/remota) enfocada en diagnóstico certero y control de enfermedades crónico-degenerativas.
                     </p>
@@ -950,59 +1137,6 @@
                 "footer_btn_email": "Email", 
                 "footer_btn_wa": "Direct WhatsApp", 
                 "footer_btn_linkedin": "LinkedIn",
-                "footer_rights": "© 2026 Dr. Han Medical. All rights reserved.",
-                "legal_badge": "COMPLIANCE & EHS",
-                "legal_title": "Regulatory Framework: <span class=\"text-indigo-600\">Data, ISO & STPS</span>",
-                "legal_desc": "An integrated management system merging legal security (LFPDPPP) with operational excellence (ISO/Lean). I protect sanitary licenses and optimize EHS processes.",
-                "legal_c1_desc": "ISO 45001/9001 internal audit and continuous improvement with Lean Six Sigma.",
-                "legal_c2_desc": "Strict LFPDPPP compliance for handling sensitive employee data.",
-                "legal_c3_title": "NOM-004-SSA3",
-                "legal_c3_desc": "Robust clinical integration for legal defense in sanitary disputes or audits.",
-                "legal_c4_title": "STPS Standards",
-                "legal_c4_desc": "Technical implementation of critical industrial safety and hygiene NOMs.",
-                "legal_c5_title": "Nursing Rooms",
-                "legal_c5_desc": "Sanitary technical regulation for the installation and operation of lactation rooms.",
-                "legal_c6_title": "Hygiene (NOM-251)",
-                "legal_c6_desc": "Good hygiene practices in food preparation and industrial cafeterias.",
-                "legal_c7_title": "Hazmat Waste (NOM-087)",
-                "legal_c7_desc": "Safe management of Hazardous Biological-Infectious Waste and environmental regulations.",
-                "legal_cta_title": "Ready for an audit?",
-                "legal_cta_desc": "STPS inspection drills and clinical record audits to ensure full compliance.",
-                "legal_btn": "Audit Compliance",
-                // Career Updated
-                "career_badge": "EXPERIENCE & LEADERSHIP",
-                "career_title": "Professional <span class=\"text-indigo-600\">Career</span>",
-                "career_desc": "Over 6 years of consolidated experience in medical care and strategic management of corporate health services.",
-                "career_role1_title": "Occupational Physician & Risk Manager",
-                "career_role1_date": "July 2023 - May 2025",
-                "career_role1_desc": "<strong>Casualty Management:</strong> Lead in accident investigation and risk qualification (ST-7, ST-9) with IMSS, achieving direct reduction of Risk Premium.<br><strong>Critical Safety:</strong> Implemented fatigue and breathalyzer protocols for operational staff.<br><strong>Medical Admin:</strong> Strategic coverage at Fresenius Kabi, DHL & Walmart Distribution Centers.",
-                "career_role2_title": "Medical Project Lead (Project)",
-                "career_role2_date": "June 2023 - September 2023",
-                "career_role2_desc": "Structured the medical department from scratch. Designed medical recruitment filters to reduce early turnover and standardized clinical records compliance.",
-                "career_role3_title": "General & Family Physician",
-                "career_role3_sub": "Private Practice & Telemedicine",
-                "career_role3_date": "February 2019 - Present",
-                "career_role3_desc": "Hybrid care (in-person/remote) focused on accurate diagnosis and control of chronic degenerative diseases.",
-                "career_edu_title": "Academic Background & Certifications",
-                "career_edu_2_title": "Specialization in Industrial Safety & Hygiene",
-                "career_edu_2_desc": "UNITEC | Expected: April 2026",
-                "career_edu_3_title": "Specialization in Health Law",
-                "career_edu_3_desc": "Focus: COFEPRIS Responsibility & Compliance",
-                "career_edu_4_title": "Lean Six Sigma Certification",
-                "career_edu_4_desc": "Yellow & Green (Certified) | Black Belt (Project Phase)",
-                "career_edu_diplomas": "Diplomas in Occupational Health & Ergonomics",
-                "career_cert_acls": "Advanced & Basic Life Support (ACLS & BLS)",
-                "career_edu_9_title": "Strategic Wellness & Stress Management",
-                "career_edu_9_desc": "Burnout Prevention, Corporate Mental Health & Sustainable Productivity",
-                // NEW REGULATORY TRANSLATIONS
-                "career_reg_lact": "Nursing Room Regulation",
-                "career_reg_food": "Cafeteria Regulation (NOM-251)",
-                "career_reg_rpbi": "Hazmat Waste Mgmt (NOM-087)",
-                
-                // Footer
-                "footer_btn_email": "Email",
-                "footer_btn_wa": "Direct WhatsApp",
-                "footer_btn_linkedin": "LinkedIn",
                 "footer_btn_cv_download": "Download Full CV",
 
                 // Dashboard Translations
@@ -1040,7 +1174,7 @@
                 "iso_5_leadership": "5. Leadership",
                 "iso_6_planning": "6. Planning",
                 "iso_7_support": "7. Support",
-                "iso_8_ops": "8. Operation",
+                "iso_8_ops": "8. Operación",
                 "iso_9_perf": "9. Performance",
                 "iso_10_improv": "10. Improvement",
                 "iso_crit_controls": "Critical Controls",
