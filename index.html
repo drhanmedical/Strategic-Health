@@ -719,6 +719,20 @@
                         <strong>Gestión de Siniestralidad:</strong> Liderazgo en investigación de accidentes y calificación de riesgos (ST-7, ST-9) ante el IMSS, logrando reducción directa de la Prima de Riesgo.<br>
                         <strong>Seguridad Crítica:</strong> Implementación de protocolos de fatiga y alcoholimetría para personal operativo.
                     </p>
+                    
+                    <!-- EVIDENCIA VISUAL (MODIFICADO CON ONCLICK) -->
+                    <div class="flex gap-4 mt-4 overflow-x-auto pb-2">
+                        <img src="https://drive.google.com/thumbnail?id=1Fi6ZrZKBHvsYDVICL45PcTsBHE4h_YDY&sz=w400" onclick="openImageModal(this.src)" alt="Evidencia Aeroméxico 1" class="h-24 sm:h-32 rounded-lg shadow-md hover:scale-105 transition-transform cursor-pointer border border-gray-200 object-cover">
+                        <img src="https://drive.google.com/thumbnail?id=1bTRsl6Wvzdm16SP6NqHqrcf6C51ARGc6&sz=w400" onclick="openImageModal(this.src)" alt="Evidencia Aeroméxico 2" class="h-24 sm:h-32 rounded-lg shadow-md hover:scale-105 transition-transform cursor-pointer border border-gray-200 object-cover">
+                        
+                        <!-- Nueva Foto -->
+                        <img src="https://drive.google.com/thumbnail?id=1UY1GXezyO8l8LrkuNPJBs1MCvOXmXMwI&sz=w400" onclick="openImageModal(this.src)" alt="Evidencia Aeroméxico 3" class="h-24 sm:h-32 rounded-lg shadow-md hover:scale-105 transition-transform cursor-pointer border border-gray-200 object-cover">
+                        
+                        <!-- Nuevo Video -->
+                        <div class="h-24 sm:h-32 w-40 sm:w-56 flex-shrink-0 rounded-lg shadow-md border border-gray-200 overflow-hidden relative group bg-black hover:scale-105 transition-transform">
+                            <iframe src="https://drive.google.com/file/d/1BsHYqgsisQnYoIilfjImr0mr4sBwLgXJ/preview" class="w-full h-full" allow="autoplay" style="border:none;"></iframe>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Role 2: Grupo Vallarta Plus -->
@@ -872,6 +886,14 @@
             </div>
         </div>
     </footer>
+    
+    <!-- Image Modal (Added) -->
+    <div id="image-modal" class="fixed inset-0 z-[100] bg-black/90 hidden items-center justify-center p-4 backdrop-blur-sm transition-opacity duration-300 opacity-0" onclick="closeImageModal()">
+        <div class="relative max-w-5xl max-h-[90vh] w-auto h-auto">
+            <button class="absolute -top-12 right-0 text-white text-4xl hover:text-teal transition-colors" onclick="closeImageModal()">&times;</button>
+            <img id="modal-img" src="" alt="Ampliada" class="max-w-full max-h-[85vh] rounded-lg shadow-2xl object-contain border border-gray-700">
+        </div>
+    </div>
 
     <!-- SCRIPTS -->
     <script>
@@ -981,7 +1003,7 @@
                 "iso_status_cert": "Certificable",
                 "iso_kpi_nc": "No Conformidades",
                 "iso_nc_critical": "Mayores (Críticas)",
-                "iso_kpi_review": "Rev. Dirección",
+                "iso_kpi_review": "Mgmt Review",
                 "iso_panel_title": "Panel de Auditoría",
                 "iso_maturity": "Nivel de Madurez",
                 "iso_4_context": "4. Contexto",
@@ -1004,7 +1026,7 @@
                 "rep_cta_desc": "Puedo implementar este mismo nivel de diagnóstico y solución en sus primeros 90 días.",
                 "rep_cta_btn": "Agendar Diagnóstico Breve",
                 "sim_rula_arm": "Brazo (Hombro)",
-                "sim_rula_neck": "Cuello / Tronco",
+                "sim_rula_neck": "Neck / Trunk",
                 "sim_reba_trunk": "Tronco",
                 "sim_reba_legs": "Piernas"
             },
@@ -1375,6 +1397,24 @@
         window.onload = () => { initDashboard(); };
         const generateBtn = document.getElementById('ai-generate-btn'); const aiLoader = document.getElementById('ai-loader'); const aiResult = document.getElementById('ai-result');
         if (generateBtn) { generateBtn.addEventListener('click', async () => { const val = document.getElementById('ai-input').value.trim(); const rTxt = translations[currentLang]; if (!val) return alert("Ingrese texto"); generateBtn.disabled = true; aiLoader.classList.remove('hidden'); aiResult.innerHTML = `<p class="text-gray-400 italic">${rTxt.ai_waiting_text}</p>`; setTimeout(() => { aiResult.innerHTML = `<p><strong>${rTxt.ai_res_diag}:</strong> ${rTxt.ai_res_txt1}</p><p><strong>${rTxt.ai_res_act}:</strong><ul><li>${rTxt.ai_res_li1}</li><li>${rTxt.ai_res_li2}</li></ul>`; aiLoader.classList.add('hidden'); generateBtn.disabled = false; }, 2000); }); }
+
+        // --- NEW IMAGE MODAL FUNCTIONS ---
+        function openImageModal(src) {
+            const modal = document.getElementById('image-modal');
+            const img = document.getElementById('modal-img');
+            img.src = src;
+            modal.classList.remove('hidden');
+            setTimeout(() => { modal.classList.remove('opacity-0'); }, 10);
+        }
+
+        function closeImageModal() {
+            const modal = document.getElementById('image-modal');
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.getElementById('modal-img').src = '';
+            }, 300);
+        }
     </script>
 </body>
 </html>
